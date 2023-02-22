@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Footer() {
 	return (
-		<Navbar className='footer'>
+		<Navbar className=' footer'>
 			<Container>
 				<Row>
 					<Col md='6'>
