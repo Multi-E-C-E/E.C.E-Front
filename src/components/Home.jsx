@@ -10,7 +10,7 @@ const Home = () => {
 			<h5>Hello Home</h5>
 			<ul>
 				<li>
-					<Link to='/dashboar'>aqui habra una imagen</Link>
+					<Link to='/dashboard'>aqui habra una imagen</Link>
 				</li>
 			</ul>
 		</Container>
