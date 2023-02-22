@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
 import Home from './components/Home';
-import  Dashboard  from './components/Dashboard';
+import Dashboard from './components/Dashboard';
+import ErrMessague from './components/errorPage/errorMessage';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboar' element={<Dashboard />}></Route>
+					<Route path='*' element={<ErrMessague/>}></Route>
 				</Routes>
 			</div>
 			<Footer />
