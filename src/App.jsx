@@ -13,7 +13,7 @@ function App() {
 			<div className='mt-5 appContainer'>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
-					<Route path='/dashboar' element={<Dashboard />}></Route>
+					<Route path='/dashboard' element={<Dashboard />}></Route>
 					<Route path='*' element={<ErrMessague/>}></Route>
 				</Routes>
 			</div>
