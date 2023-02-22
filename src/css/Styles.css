@@ -1,8 +1,8 @@
 .logo {
-	width: 220px;
-	height: 80px;
-	margin: 5px;
-	clip-path: circle(100% );
+	width: 150px;
+	height: 50px;
+	margin: 0px;
+	clip-path: circle(100%);
 	transition-property: clip-path;
 	transition-duration: 2s;
 	transition-timing-function: ease;
@@ -14,16 +14,15 @@
 	clip-path: circle(100%);
 }
 .nav-bar {
-	background: #fdc830; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#f37335,
-		#c27114
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#f37335,
-		#e97d30e7
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #fdc830;
+	background: -webkit-linear-gradient(to right, #f37335, #c27114);
+	background: linear-gradient(to right, #f37335, #e97d30e7);
 }
 
+.footer {
+	flex: 10;
+	height: 200px;
+	background: #fdc830;
+	background: -webkit-linear-gradient(to right, #f37335, #c27114);
+	background: linear-gradient(to right, #f37335, #e97d30e7);
+}
