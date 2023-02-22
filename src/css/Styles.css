@@ -1,0 +1,37 @@
+.logo {
+	width: 150px;
+	height: 50px;
+	margin: 0px;
+	clip-path: circle(100%);
+	transition-property: clip-path;
+	transition-duration: 2s;
+	transition-timing-function: ease;
+	transition-delay: ease-out;
+	margin-left: 20px;
+	background-color: aliceblue;
+}
+.logo:hover {
+	clip-path: circle(100%);
+}
+.nav-bar {
+	padding: '0px 15px';
+	background: #fdc830;
+	background: -webkit-linear-gradient(to right, #f37335, #c27114);
+	background: linear-gradient(to right, #f37335, #e97d30e7);
+}
+body{
+	position: relative;
+	padding-bottom: 41em;
+}
+
+.footer {
+	flex: 1;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin-top: 40px;
+	height: 220px;
+	background: #fdc830;
+	background: -webkit-linear-gradient(to right, #f37335, #c27114);
+	background: linear-gradient(to right, #f37335, #e97d30e7);
+}
