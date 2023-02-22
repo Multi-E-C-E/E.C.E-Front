@@ -1,16 +1,22 @@
 import { React } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
-import { Container } from 'react-bootstrap';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import ErrMessague from './components/errorPage/errorMessage';
 
 function App() {
 	return (
 		<>
 			<Header />
-			<Container className='mt-5 appContainer'>
-				<h5>Hello world</h5>
-			</Container>
+			<div className='mt-5 appContainer'>
+				<Routes>
+					<Route path='/' element={<Home />}></Route>
+					<Route path='/dashboard' element={<Dashboard />}></Route>
+					<Route path='*' element={<ErrMessague/>}></Route>
+				</Routes>
+			</div>
 			<Footer />
 		</>
 	);
