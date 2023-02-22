@@ -6,9 +6,8 @@ function Header() {
 			<Navbar className='nav-bar' variant='dark'>
 				<Navbar.Brand href='#home'>
 					<img
-						src='https://plataformaeducativa.upqroo.edu.mx/pluginfile.php/1/theme_lambda/logo/1672677068/upqroo_logo.png'
-						width='200'
-						className='logo d-inline-block align-top'
+						className='logo'
+						src='https://drive.google.com/uc?export=view&id=1tw0vw4s1eH4g-FfFoF36eEoB0bX3CcHD'
 					/>
 				</Navbar.Brand>
 			</Navbar>

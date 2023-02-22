@@ -22,6 +22,12 @@ function Footer() {
 					</Col>
 				</Row>
 			</Container>
+			<Navbar.Brand href='#home'>
+					<img
+						className='logo-2'
+						src='
+						https://drive.google.com/uc?export=view&id=1gZCH2UgnWcrUfs3fB2cCCepilMAMTJix'					/>
+				</Navbar.Brand>
 		</Navbar>
 	);
 }

@@ -1,19 +1,27 @@
 .logo {
-	width: 150px;
-	height: 50px;
-	margin: 0px;
+	width: 219px;
+	height: 210px;
+	margin-top: 5px;
+	border-radius: 18%;
 	clip-path: circle(100%);
 	transition-property: clip-path;
 	transition-duration: 2s;
 	transition-timing-function: ease;
 	transition-delay: ease-out;
 	margin-left: 20px;
-	background-color: aliceblue;
+		
+}
+
+.logo-2{
+	width: 324px;
+	height: 112px;
+	margin-right: 20px;
 }
 .logo:hover {
 	clip-path: circle(100%);
 }
 .nav-bar {
+	height: 60px;
 	padding: '0px 15px';
 	background: #fdc830;
 	background: -webkit-linear-gradient(to right, #f37335, #c27114);
