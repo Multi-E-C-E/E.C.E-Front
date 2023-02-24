@@ -2,9 +2,12 @@ import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
-import Home from './components/Home';
+import Home from './components/homePage/Home';
 import Dashboard from './components/Dashboard';
 import ErrMessague from './components/errorPage/errorMessage';
+import ComponentDetail from './components/componentDetail/ComponentDeets';
+import MSE from './components/MeasEquip/MeasE';
+import Practice from './components/practices/practice';
 
 function App() {
 	return (
@@ -14,7 +17,10 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboard' element={<Dashboard />}></Route>
-					<Route path='*' element={<ErrMessague/>}></Route>
+					<Route path='/component' element={<ComponentDetail />}></Route>
+					<Route path='/tools' element={<MSE />}></Route>
+					<Route path='/practice' element={<Practice />}></Route>
+					<Route path='*' element={<ErrMessague />}></Route>
 				</Routes>
 			</div>
 			<Footer />
