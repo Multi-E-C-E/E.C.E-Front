@@ -29,7 +29,7 @@
 }
 body{
 	position: relative;
-	padding-bottom: 49em;
+	padding-bottom: 50em;
 }
 
 .footer {
@@ -37,7 +37,7 @@ body{
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	margin-top: 40px;
+	margin-top: 10px;
 	height: 220px;
 	background: #fdc830;
 	background: -webkit-linear-gradient(to right, #f37335, #c27114);
