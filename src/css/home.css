@@ -1,5 +1,5 @@
 .img-carousel{
-    border-radius: 100%;
+    display: block;
     height:500px;
-    width: 500px;
+    width: 100%;
 }
