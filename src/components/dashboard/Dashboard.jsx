@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { fetchData } from '../../network/fetchData.jsx';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
 import './../../css/dashboard.css';
 const components = fetchData('item/all');

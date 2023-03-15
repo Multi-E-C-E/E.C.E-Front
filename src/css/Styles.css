@@ -9,10 +9,9 @@
 	transition-timing-function: ease;
 	transition-delay: ease-out;
 	margin-left: 20px;
-		
 }
 
-.logo-2{
+.logo-2 {
 	width: 324px;
 	height: 112px;
 	margin-right: 20px;
@@ -27,7 +26,7 @@
 	background: -webkit-linear-gradient(to right, #f37335, #c27114);
 	background: linear-gradient(to right, #f37335, #e97d30e7);
 }
-body{
+body {
 	position: relative;
 	padding-bottom: 50em;
 }
