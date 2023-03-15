@@ -31,29 +31,29 @@ export const Dashboard = () => {
 						))}
 					</Suspense>
 				</div>
-				<Link to='/tools' onClick={handleClick}>
-					<div className='dash-eq-card-container'>
-						<Card className='dash-eq-card'>
+				<div className='dash-eq-card-container'>
+					<Card className='dash-eq-card'>
+						<Link to='/tools' onClick={handleClick}>
 							<Card.Img
 								variant='top'
 								className='img-qe-card'
 								src='https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg'
 							/>
+						</Link>
 
-							<Card.Body>
-								<Card.Title>{<h1>equiposMedicion</h1>}</Card.Title>
-								<Card.Text>
-									{
-										<h1>
-											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-											Animi, magnam.
-										</h1>
-									}
-								</Card.Text>
-							</Card.Body>
-						</Card>
-					</div>
-				</Link>
+						<Card.Body className='card-eq'>
+							<Card.Title>{<h5>equiposMedicion</h5>}</Card.Title>
+							<Card.Text>
+								{
+									<h7>
+										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										Animi, magnam.
+									</h7>
+								}
+							</Card.Text>
+						</Card.Body>
+					</Card>
+				</div>
 			</Container>
 		</>
 	);
