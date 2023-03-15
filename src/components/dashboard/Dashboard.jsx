@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+import { handleClick } from '../commons/onHandleClick-jsx';
+import { Link } from 'react-router-dom';
 import { fetchData } from '../../network/fetchData.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
@@ -6,6 +8,7 @@ import './../../css/dashboard.css';
 const components = fetchData('item/all');
 export const Dashboard = () => {
 	const items = components.read();
+
 	return (
 		<>
 			<Container>
@@ -28,27 +31,29 @@ export const Dashboard = () => {
 						))}
 					</Suspense>
 				</div>
+				<Link to='/tools' onClick={handleClick}>
+					<div className='dash-eq-card-container'>
+						<Card className='dash-eq-card'>
+							<Card.Img
+								variant='top'
+								className='img-qe-card'
+								src='https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg'
+							/>
 
-				<div className='dash-eq-card-container'>
-					<Card className='dash-eq-card'>
-						<Card.Img
-							variant='top'
-							className='img-qe-card'
-							src='https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg'
-						/>
-						<Card.Body>
-							<Card.Title>{<h1>equiposMedicion</h1>}</Card.Title>
-							<Card.Text>
-								{
-									<h1>
-										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-										Animi, magnam.
-									</h1>
-								}
-							</Card.Text>
-						</Card.Body>
-					</Card>
-				</div>
+							<Card.Body>
+								<Card.Title>{<h1>equiposMedicion</h1>}</Card.Title>
+								<Card.Text>
+									{
+										<h1>
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+											Animi, magnam.
+										</h1>
+									}
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</div>
+				</Link>
 			</Container>
 		</>
 	);
