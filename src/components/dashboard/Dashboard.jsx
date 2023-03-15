@@ -15,7 +15,7 @@ export const Dashboard = () => {
 							<Card className='dash-card' key={item.name}>
 								<Card.Img
 									variant='top'
-									className='img-card'
+									className='img-card '
 									src={item.img_item}
 									alt={item.name}
 								/>
