@@ -5,7 +5,7 @@ import ControlledCarousel from './Carousel';
 import { MdStart } from 'react-icons/md';
 import './../../css/home.css';
 
-const Home = () => {
+export const Home = () => {
 	return (
 		<>
 			<ControlledCarousel />
@@ -14,8 +14,9 @@ const Home = () => {
 					<MdStart className='icon' />
 				</Link>
 			</Container>
+			
 		</>
 	);
 };
 
-export default Home;
+

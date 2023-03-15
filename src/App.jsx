@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
-import Home from './components/homePage/Home';
+import {Home} from './components/homePage/Home'
 import Dashboard from './components/dashboard/Dashboard';
 import ErrMessague from './components/errorPage/errorMessage';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
