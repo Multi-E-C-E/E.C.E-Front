@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 
-function Footer() {
+export const Footer = () => {
 	return (
 		<Navbar className=' footer'>
 			<Container>
@@ -23,13 +23,12 @@ function Footer() {
 				</Row>
 			</Container>
 			<Navbar.Brand href='#home'>
-					<img
-						className='logo-2'
-						src='
-						https://drive.google.com/uc?export=view&id=1gZCH2UgnWcrUfs3fB2cCCepilMAMTJix'					/>
-				</Navbar.Brand>
+				<img
+					className='logo-2'
+					src='
+						https://drive.google.com/uc?export=view&id=1gZCH2UgnWcrUfs3fB2cCCepilMAMTJix'
+				/>
+			</Navbar.Brand>
 		</Navbar>
 	);
-}
-
-export default Footer;
+};

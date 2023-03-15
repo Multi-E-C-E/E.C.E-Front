@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const ErrMessague = () => {
+export const ErrMessague = () => {
 	return (
 		<>
 			<h1>Parece que ha ocurrido un error:404</h1>{' '}
@@ -60,5 +60,3 @@ const ErrMessague = () => {
 		</>
 	);
 };
-
-export default ErrMessague;
