@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react';
 import { fetchData } from '../../network/fetchData.jsx';
 import { Card, Button, Container } from 'react-bootstrap';
+import { TbInfoOctagon } from "react-icons/tb";
 import './../../css/dashboard.css';
-const api = fetchData('item/all?type=Componente Electronico');
+const api = fetchData('item/all');
 export const Dashboard = () => {
 	const items = api.read();
 	return (
@@ -21,7 +22,7 @@ export const Dashboard = () => {
 								<Card.Body>
 									<Card.Title>{item.name}</Card.Title>
 									<Card.Text>{item.Type_item.name_type}</Card.Text>
-									<Button variant='primary'>Ver detalles</Button>
+									<TbInfoOctagon className='icon-info'/>
 								</Card.Body>
 							</Card>
 						))}

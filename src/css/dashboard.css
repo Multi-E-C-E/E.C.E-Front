@@ -8,6 +8,7 @@
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
+	text-align: center;
 	justify-content: space-between;
 }
 
@@ -15,4 +16,12 @@
 	width: 15rem;
 	border-radius: 40px;
 	margin: 0px;
+}
+
+.icon-info{
+	display: block;
+	height: 50px;
+	width: 70%;
+	margin: 0 auto;
+	color: black;
 }
