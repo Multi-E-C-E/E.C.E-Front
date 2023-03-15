@@ -1,12 +1,11 @@
-import { React, useState, useEffect } from 'react';
 import { useFecth } from '../../network/useFecth.jsx';
 
 export const Dashboard = () => {
 	const { items } = useFecth('item/all?type=Componente Electronico');
 
 	return (
-		<div>
-			<ul>
+		<>
+			<div>
 				{items.map(item => (
 					<li key={item.name}>
 						<img src={item.img_item} alt={item.name} />
@@ -14,7 +13,7 @@ export const Dashboard = () => {
 						<p>{item.Type_item.name_type}</p>
 					</li>
 				))}
-			</ul>
-		</div>
+			</div>
+		</>
 	);
 };
