@@ -9,27 +9,22 @@ const ControlledCarousel = () => {
 		setIndex(selectedIndex);
 	};
 
+	const carouselImages = [
+		'https://www.pixelstalk.net/wp-content/uploads/2016/07/Free-Download-1080p-Full-HD-Images.jpg',
+		'https://wallpapers.com/images/hd/tree-on-green-lake-1519g7y2yexhnyvl.jpg',
+		'https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg',
+	];
+
 	return (
-		<Carousel activeIndex={index} onSelect={handleSelect}>
-			<Carousel.Item>
-				<img
-					className='img-carousel'
-					src='https://media.istockphoto.com/id/646291934/photo/black-power-transistors.jpg?s=612x612&w=0&k=20&c=jmkG5DH3NFNxGGX4JLy_2TXhY1vPJIVrubKlWIXdYXE='
-				/>
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className='img-carousel'
-					src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPdYAxWbberTU6v0YLZDtExp60wAl-aVuHxg&usqp=CAU'
-				/>
-			</Carousel.Item>
-			<Carousel.Item>
-				<img
-					className=' img-carousel'
-					src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpBvUoUdBCRFAWiKcJrMD4B1LUn6tzQVbYpA&usqp=CAU'
-				/>
-			</Carousel.Item>
-		</Carousel>
+		<>
+			<Carousel activeIndex={index} onSelect={handleSelect}>
+				{carouselImages.map((image, i) => (
+					<Carousel.Item key={i}>
+						<img className='img-carousel' src={image} />
+					</Carousel.Item>
+				))}
+			</Carousel>
+		</>
 	);
 };
 

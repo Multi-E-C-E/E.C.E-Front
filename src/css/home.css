@@ -1,5 +1,15 @@
-.img-carousel{
-    display: block;
-    height:500px;
-    width: 100%;
+.img-carousel {
+	display: block;
+	height: 600px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.icon {
+
+	display: block;
+	height: 50px;
+	width: 70%;
+	margin: 0 auto;
+	color: black;
 }
