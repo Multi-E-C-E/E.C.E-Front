@@ -3,11 +3,11 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-  sentting:{
-    react:{
-      version:'detect'
-    }
-  },
+	settings: {
+		react: {
+			version: '18.2.0', // Replace this with the version of React you are using
+		},
+	},
 	extends: [
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
