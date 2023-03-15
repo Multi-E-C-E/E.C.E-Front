@@ -1,17 +1,22 @@
-import { React } from 'react';
-import { Link } from 'react-router-dom';
+import { React, useState, useEffect } from 'react';
+import { useFecth } from '../../network/useFecth.js';
 
 export const Dashboard = () => {
+	const { items } = useFecth(
+		'item/all?type=Componente Electronico'
+	);
+
 	return (
-		<>
-			<h1>Hello Dashboar</h1>
-			<Link to='/component'>
-				<h1>Componentes</h1>
-			</Link>
-            <Link to='/tools'>
-				<h1>Equpos de medicion</h1>
-			</Link>
-		</>
+		<div>
+			<ul>
+				{items.map(item => (
+					<li key={item.name}>
+						<img src={item.img_item} alt={item.name} />
+						<h2>{item.name}</h2>
+						<p>{item.Type_item.name_type}</p>
+					</li>
+				))}
+			</ul>
+		</div>
 	);
 };
-
