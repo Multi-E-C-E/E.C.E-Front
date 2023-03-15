@@ -1,17 +1,34 @@
-import { React } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { Suspense } from 'react';
+import { fetchData } from '../../network/fetchData.jsx';
+import { Card, Button, Container } from 'react-bootstrap';
+import { TbInfoOctagon } from "react-icons/tb";
+import './../../css/dashboard.css';
+const api = fetchData('item/all');
 export const Dashboard = () => {
+	const items = api.read();
 	return (
 		<>
-			<h1>Hello Dashboar</h1>
-			<Link to='/component'>
-				<h1>Componentes</h1>
-			</Link>
-            <Link to='/tools'>
-				<h1>Equpos de medicion</h1>
-			</Link>
+			<Container>
+				<div className='card-container'>
+					<Suspense fallback={<div>Cargando ... </div>}>
+						{items.map(item => (
+							<Card className='card' key={item.name}>
+								<Card.Img
+									variant='top'
+									className='img-card'
+									src={item.img_item}
+									alt={item.name}
+								/>
+								<Card.Body>
+									<Card.Title>{item.name}</Card.Title>
+									<Card.Text>{item.Type_item.name_type}</Card.Text>
+									<TbInfoOctagon className='icon-info'/>
+								</Card.Body>
+							</Card>
+						))}
+					</Suspense>
+				</div>
+			</Container>
 		</>
 	);
 };
-
