@@ -5,22 +5,22 @@
 	margin: 0 auto;
 }
 
-.card-container {
+.dash-card-container {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	justify-content: space-between;
 }
 
-.card {
+.dash-card {
 	width: 15rem;
 	border-radius: 40px;
-	margin: 0px;
-	
+
+	margin-bottom: 10;
 	transition: all 0.5s;
 }
 
-.card:hover {
+.dash-card:hover {
 	width: 16rem;
 	background-color: antiquewhite;
 	border-radius: 20px;
@@ -36,4 +36,23 @@
 }
 .icon-info:hover {
 	color: rgb(219, 147, 147);
+}
+
+.dash-eq-card-container {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	height: 300px;
+}
+.dash-eq-card {
+	width: 45rem;
+	border-radius: 0px;
+	margin-top: 100px;
+}
+
+.img-qe-card {
+	display: block;
+	height: 25rem;
+	
+	margin: 0 auto;
 }
