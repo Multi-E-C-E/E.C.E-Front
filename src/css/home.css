@@ -1,0 +1,28 @@
+.img-carousel {
+	display: block;
+	height: 600px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.icon {
+
+	display: block;
+	height: 50px;
+	width: 70%;
+	margin: 0 auto;
+	color: black;
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  }
+
+  .card {
+	width: 35rem;
+	border-radius: 40px;
+	margin: 20px;
+  }
+  

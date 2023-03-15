@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import ControlledCarousel from './Carousel';
+import { MdStart } from 'react-icons/md';
+import { Info } from './Description';
+import './../../css/home.css';
 
-const Home = () => {
+export const Home = () => {
 	return (
-		<Container>
-			<h5>Hello Home</h5>
-			<ul>
-				<li>
-
-					<Link to='/dashboard'>aqui habra una imagen</Link>
-				</li>
-			</ul>
-		</Container>
+		<>
+			<ControlledCarousel />
+			<Container>
+				<Link to='/dashboard'>
+					<MdStart className='icon' />
+				</Link>
+				<Info />
+			</Container>
+		</>
 	);
 };
-
-export default Home;

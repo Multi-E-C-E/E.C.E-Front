@@ -1,19 +1,21 @@
 import { React } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Header from './components/commons/Header';
 import Footer from './components/commons/Footer';
-import Home from './components/homePage/Home';
-import Dashboard from './components/Dashboard';
+import {Home} from './components/homePage/Home'
+import Dashboard from './components/dashboard/Dashboard';
 import ErrMessague from './components/errorPage/errorMessage';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
 import Practice from './components/practices/practice';
 
 function App() {
+	const { pathname } = useLocation();
 	return (
 		<>
 			<Header />
-			<div className='mt-5 appContainer'>
+			<div className={pathname === '/' ? '' : 'mt-5'}>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboard' element={<Dashboard />}></Route>
