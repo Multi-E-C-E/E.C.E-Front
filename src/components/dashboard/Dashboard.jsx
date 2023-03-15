@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+export const Dashboard = () => {
 	return (
 		<>
 			<h1>Hello Dashboar</h1>
@@ -15,4 +15,3 @@ const Dashboard = () => {
 	);
 };
 
-export default Dashboard;
