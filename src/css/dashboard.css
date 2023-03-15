@@ -16,12 +16,24 @@
 	width: 15rem;
 	border-radius: 40px;
 	margin: 0px;
+	
+	transition: all 0.5s;
 }
 
-.icon-info{
+.card:hover {
+	width: 16rem;
+	background-color: antiquewhite;
+	border-radius: 20px;
+}
+
+.icon-info {
 	display: block;
-	height: 50px;
+	height: 35px;
 	width: 70%;
 	margin: 0 auto;
 	color: black;
+	transition: color 0.5s ease;
+}
+.icon-info:hover {
+	color: rgb(219, 147, 147);
 }
