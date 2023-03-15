@@ -1,10 +1,8 @@
 import { React, useState, useEffect } from 'react';
-import { useFecth } from '../../network/useFecth.js';
+import { useFecth } from '../../network/useFecth.jsx';
 
 export const Dashboard = () => {
-	const { items } = useFecth(
-		'item/all?type=Componente Electronico'
-	);
+	const { items } = useFecth('item/all?type=Componente Electronico');
 
 	return (
 		<div>
