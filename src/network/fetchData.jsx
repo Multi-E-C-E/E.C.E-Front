@@ -29,10 +29,10 @@ const suspendFun = promise => {
 	return { read };
 };
 
-export function fetchData(END_POINT) {
+export const fetchData = END_POINT => {
 	const promise = fetch(BASE_URL + END_POINT)
 		.then(response => response.json())
 		.then(json => json);
 
 	return suspendFun(promise);
-}
+};
