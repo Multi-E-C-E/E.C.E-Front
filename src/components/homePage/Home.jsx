@@ -12,6 +12,7 @@ export const Home = () => {
 			<ControlledCarousel />
 			<Container>
 				<Link to='/dashboard' onClick={handleClick}>
+					<h5 className='text-home'>Click aqui para ir al dashboard</h5>
 					<MdStart className='icon' />
 				</Link>
 				<Info />

@@ -6,23 +6,50 @@
 }
 
 .icon {
-
 	display: block;
 	height: 50px;
 	width: 70%;
 	margin: 0 auto;
+	margin-top: 1px;
 	color: black;
 }
+.text-home{
+	text-align: center;
+	height: 50px;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	color: black;
+	text-decoration: underline black; 
+	font-style: italic; 
+	font-family: "Times New Roman", Times, serif; 
+}
+.text-home:hover{
+	color: rgb(219, 147, 147);
+	text-decoration: underline rgb(219, 147, 147);
+}
+
 
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-  }
+}
 
-  .card {
+.card {
 	width: 35rem;
 	border-radius: 40px;
 	margin: 20px;
-  }
-  
+}
+/* estilos para pantallas con ancho máximo de 768px */
+
+@media screen and (max-width: 768px) {
+	.img-carousel {
+		display: block;
+
+		height: 200px;
+		width: 50%;
+		margin: 0 auto;
+	}
+}

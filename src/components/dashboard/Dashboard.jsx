@@ -42,7 +42,7 @@ export const Dashboard = () => {
 						</Link>
 
 						<Card.Body className='card-eq'>
-							<Card.Title>{<h5>equiposMedicion</h5>}</Card.Title>
+							<Card.Title>{<h5>Equipos de medicion</h5>}</Card.Title>
 							<Card.Text>
 								{
 									<h7>
