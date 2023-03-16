@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { handleClick } from '../commons/onHandleClick-jsx';
+import { handleClick } from '../commons/onHandleClick.jsx';
 import { Link } from 'react-router-dom';
 import { fetchData } from '../../network/fetchData.jsx';
 import { Card, Container } from 'react-bootstrap';
