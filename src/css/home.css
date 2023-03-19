@@ -1,7 +1,12 @@
+.carousel-contaier {
+	background-color:  rgba(219, 147, 147, 0.122);
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
 .img-carousel {
 	display: block;
-	height: 600px;
-	width: 70%;
+	height: 640px;
+	width: 62%;
 	margin: 0 auto;
 }
 
