@@ -9,6 +9,22 @@ const components = fetchData('item/all');
 export const Dashboard = () => {
 	const items = components.read();
 
+	const tools = [
+		{
+			name: 'Equipos de medicon',
+			img_item: 'https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg',
+			desciption: { text: 'lorem impus odio, alsison equota' },
+			path: '/tools',
+		},
+		{
+			name: 'Practicas',
+			img_item: 'https://placehold.it/200x200',
+			desciption: { text: 'lorem impus odio' },
+			path: '/practice',
+		},
+		// ...
+	];
+
 	return (
 		<>
 			<Container>
@@ -31,28 +47,35 @@ export const Dashboard = () => {
 						))}
 					</Suspense>
 				</div>
-				<div className='dash-eq-card-container'>
-					<Card className='dash-eq-card'>
-						<Link to='/tools' onClick={handleClick}>
-							<Card.Img
-								variant='top'
-								className='img-qe-card'
-								src='https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg'
-							/>
-						</Link>
+				<hr />
 
-						<Card.Body className='card-eq'>
-							<Card.Title>{<h5>Equipos de medicion</h5>}</Card.Title>
-							<Card.Text>
-								{
-									<h7>
-										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-										Animi, magnam.
-									</h7>
-								}
-							</Card.Text>
-						</Card.Body>
-					</Card>
+				<div className='dash-eq-card-container'>
+					{tools.map(item => (
+						<Card className='dash-eq-card' key={item.name}>
+							<Link
+								className='link-no-style'
+								to={item.path}
+								onClick={handleClick}
+							>
+								<Card.Img
+									variant='top'
+									className='img-qe-card'
+									src={item.img_item}
+									alt={item.name}
+								/>
+								<Card.Body>
+									<Card.Title>
+										<h6>{item.name}</h6>
+									</Card.Title>
+									<Card.Text>
+										<h5>{item.desciption.text}</h5>
+									</Card.Text>
+
+									<TbInfoOctagon className='icon-info' />
+								</Card.Body>
+							</Link>
+						</Card>
+					))}
 				</div>
 			</Container>
 		</>

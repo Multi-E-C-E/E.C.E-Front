@@ -51,31 +51,40 @@ Estilos para las cards de los componentes electronicos
 }
 
 /*
-Estilos para la card de equipos de medicion
+Estilos para la card de equipos de medicion 
 */
 
 .dash-eq-card-container {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
-	height: 300px;
+	justify-content: space-around;
 }
-h7 {
+.link-no-style {
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+.dash-eq-card {
+	width: 25rem;
+	border-radius: 0px;
+	margin-top: 10px;
+	transition: all 0.5s;
+}
+.dash-eq-card:hover {
+	border-radius: 40px;
+	width: 27rem;
+	background-color: antiquewhite;
+}
+
+h6 {
 	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
+	color: rgb(17, 17, 17);
 }
 h5 {
 	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
-}
-.dash-eq-card {
-	width: 45rem;
-	border-radius: 0px;
-	margin-top: 100px;
-}
-.dash-eq-card:hover {
-	border-radius: 40px;
-	background-color: antiquewhite;
+	color: rgb(0, 0, 0);
 }
 
 .img-qe-card {
@@ -88,6 +97,7 @@ h5 {
 .img-qe-card:hover {
 	display: block;
 	height: 27rem;
+	width: 27rem;
 }
 
 /*
