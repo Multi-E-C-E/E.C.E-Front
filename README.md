@@ -19,6 +19,6 @@
 ### 2.Instala las dependencias : 
     npm install
 
-### Para ejecutar el proyecto deberas correr el sigiente comando en la carpeta de raiz del proyecto
+### 3.Para ejecutar el proyecto deberas correr el sigiente comando en la carpeta de raiz del proyecto :
     npm run dev 
 
