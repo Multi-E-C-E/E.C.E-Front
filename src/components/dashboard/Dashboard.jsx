@@ -5,6 +5,9 @@ import { fetchData } from '../../network/fetchData.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
 import './../../css/dashboard.css';
+import image from './assets/eq.png';
+import image2 from './assets/img-practice.png';
+
 const components = fetchData('item/all');
 export const Dashboard = () => {
 	const items = components.read();
@@ -12,13 +15,13 @@ export const Dashboard = () => {
 	const tools = [
 		{
 			name: 'Equipos de medicon',
-			img_item: 'https://wallup.net/wp-content/uploads/2014/10/nature/Yellow_Nature_Landscape_Picture.jpg',
+			img_item: image,
 			desciption: { text: 'lorem impus odio, alsison equota' },
 			path: '/tools',
 		},
 		{
 			name: 'Practicas',
-			img_item: 'https://placehold.it/200x200',
+			img_item: image2,
 			desciption: { text: 'lorem impus odio' },
 			path: '/practice',
 		},
