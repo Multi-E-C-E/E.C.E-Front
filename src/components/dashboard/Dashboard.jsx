@@ -51,7 +51,6 @@ export const Dashboard = () => {
 					</Suspense>
 				</div>
 				<hr />
-
 				<div className='dash-eq-card-container'>
 					{tools.map(item => (
 						<Card className='dash-eq-card' key={item.name}>
