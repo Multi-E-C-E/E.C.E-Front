@@ -8,7 +8,7 @@ import './../../css/dashboard.css';
 import image from './assets/eq.png';
 import image2 from './assets/img-practice.png';
 
-const components = fetchData('item/all');
+const components = fetchData('item/all?type=1');
 export const Dashboard = () => {
 	const items = components.read();
 
@@ -38,12 +38,12 @@ export const Dashboard = () => {
 								<Card.Img
 									variant='top'
 									className='img-card '
-									src={item.img_item}
+									src={item.preview}
 									alt={item.name}
 								/>
 								<Card.Body>
 									<Card.Title>{item.name}</Card.Title>
-									<Card.Text>{item.Type_item.name_type}</Card.Text>
+									<Card.Text>{item.TypeItem.name_type}</Card.Text>
 									<TbInfoOctagon className='icon-info' />
 								</Card.Body>
 							</Card>
