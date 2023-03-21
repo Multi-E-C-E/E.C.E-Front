@@ -1,23 +1,39 @@
 // imageList
+import { Suspense } from 'react';
 import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+// import { ImageList, ImageListItem,ImageListItemBar } from '@material-ui/core';
+import { fetchData } from '../../network/fetchData';
+
+const apiData = fetchData('item/all');
 
 // Se podria usar botton base para que se active una funcion al presionar la imagen
 // Creo que se puede hacer una peticion con su numero de id para traer los datos
-const toolsList = () => {
+const toolsList = props => {
+	const list = apiData.read();
+	const enviarData = data => {
+		props.enviar(data);
+	};
 	return (
-		<ImageList sx={{ width: 300, height: 300 }} cols={1} rowHeight={100}>
-			{itemData.map(image => {
-				return (
-					<ImageListItem key={image.img}>
-						<img
-							src={`${image.img}?w=300&h=100&fit=crop&auto=format`}
-							alt={image.title}
-						/>
-						<ImageListItemBar title={image.title} />
-					</ImageListItem>
-				);
-			})}
-		</ImageList>
+		<>
+			<Suspense fallback={<div>Loading...</div>}></Suspense>
+			<ImageList sx={{ width: 300, height: 300 }} cols={1} rowHeight={150}>
+				{list.map(image => {
+					return (
+						<ImageListItem
+							key={image.id_item}
+							onClick={() => enviarData(image.id_item)}
+						>
+							<img
+								src={image.preview_url}
+								alt={image.name}
+								style={{ objectFit: 'cover', height: 150 }}
+							/>
+							<ImageListItemBar title={image.name} />
+						</ImageListItem>
+					);
+				})}
+			</ImageList>
+		</>
 	);
 };
 
