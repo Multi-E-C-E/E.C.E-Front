@@ -38,7 +38,7 @@ export const Dashboard = () => {
 									<Card.Img
 										variant='top'
 										className='img-card '
-										src={item.preview}
+										src={item.preview_url}
 										alt={item.name}
 									/>
 									<Card.Body>
