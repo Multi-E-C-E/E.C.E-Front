@@ -79,6 +79,6 @@ export const Dashboard = () => {
 			</>
 		);
 	} catch (error) {
-		return <div>Error: No se pudo cargar los datos</div>;
+		return <div>Error: No hay conección con la API</div>;
 	}
 };
