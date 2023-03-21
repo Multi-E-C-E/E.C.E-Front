@@ -66,11 +66,9 @@ export const Dashboard = () => {
 									alt={item.name}
 								/>
 								<Card.Body>
-									<Card.Title>
-										<h6>{item.name}</h6>
-									</Card.Title>
-									<Card.Text>
-										<h5>{item.desciption.text}</h5>
+									<Card.Title className='title-eq-card'>{item.name}</Card.Title>
+									<Card.Text className='text-qe-card'>
+										{item.desciption.text}
 									</Card.Text>
 
 									<TbInfoOctagon className='icon-info' />
