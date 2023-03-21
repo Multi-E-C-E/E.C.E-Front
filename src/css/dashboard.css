@@ -76,12 +76,12 @@ Estilos para la card de equipos de medicion
 	background-color: antiquewhite;
 }
 
-h6 {
+.title-eq-card {
 	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
 	color: rgb(17, 17, 17);
 }
-h5 {
+.text-qe-card {
 	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
 	color: rgb(0, 0, 0);
