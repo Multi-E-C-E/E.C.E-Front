@@ -10,76 +10,75 @@ import image2 from './assets/img-practice.png';
 
 const components = fetchData('item/all?type=1');
 export const Dashboard = () => {
-	const items = components.read();
+	try {
+		const items = components.read();
+		const tools = [
+			{
+				name: 'Equipos de medicon',
+				img_item: image,
+				desciption: { text: 'lorem impus odio, alsison equota' },
+				path: '/tools',
+			},
+			{
+				name: 'Practicas',
+				img_item: image2,
+				desciption: { text: 'lorem impus odio' },
+				path: '/practice',
+			},
+			// ...
+		];
 
-	const tools = [
-		{
-			name: 'Equipos de medicon',
-			img_item: image,
-			desciption: { text: 'lorem impus odio, alsison equota' },
-			path: '/tools',
-		},
-		{
-			name: 'Practicas',
-			img_item: image2,
-			desciption: { text: 'lorem impus odio' },
-			path: '/practice',
-		},
-		// ...
-	];
+		return (
+			<>
+				<Container>
+					<div className='dash-card-container'>
+						<Suspense fallback={<div>Cargando ... </div>}>
+							{items.map(item => (
+								<Card className='dash-card' key={item.name}>
+									<Card.Img
+										variant='top'
+										className='img-card '
+										src={item.preview}
+										alt={item.name}
+									/>
+									<Card.Body>
+										<Card.Title>{item.name}</Card.Title>
+										<Card.Text>{item.TypeItem.name_type}</Card.Text>
+										<TbInfoOctagon className='icon-info' />
+									</Card.Body>
+								</Card>
+							))}
+						</Suspense>
+					</div>
+					<hr />
+					<div className='dash-eq-card-container'>
+						{tools.map(item => (
+							<Card className='dash-eq-card' key={item.name}>
+								<Link
+									className='link-no-style'
+									to={item.path}
+									onClick={handleClick}
+								>
+									<Card.Img
+										variant='top'
+										className='img-qe-card'
+										src={item.img_item}
+										alt={item.name}
+									/>
+									<Card.Body>
+										<Card.Title>{item.name}</Card.Title>
+										<Card.Text>{item.desciption.text}</Card.Text>
 
-	return (
-		<>
-			<Container>
-				<div className='dash-card-container'>
-					<Suspense fallback={<div>Cargando ... </div>}>
-						{items.map(item => (
-							<Card className='dash-card' key={item.name}>
-								<Card.Img
-									variant='top'
-									className='img-card '
-									src={item.preview}
-									alt={item.name}
-								/>
-								<Card.Body>
-									<Card.Title>{item.name}</Card.Title>
-									<Card.Text>{item.TypeItem.name_type}</Card.Text>
-									<TbInfoOctagon className='icon-info' />
-								</Card.Body>
+										<TbInfoOctagon className='icon-info' />
+									</Card.Body>
+								</Link>
 							</Card>
 						))}
-					</Suspense>
-				</div>
-				<hr />
-				<div className='dash-eq-card-container'>
-					{tools.map(item => (
-						<Card className='dash-eq-card' key={item.name}>
-							<Link
-								className='link-no-style'
-								to={item.path}
-								onClick={handleClick}
-							>
-								<Card.Img
-									variant='top'
-									className='img-qe-card'
-									src={item.img_item}
-									alt={item.name}
-								/>
-								<Card.Body>
-									<Card.Title>
-										<h6>{item.name}</h6>
-									</Card.Title>
-									<Card.Text>
-										<h5>{item.desciption.text}</h5>
-									</Card.Text>
-
-									<TbInfoOctagon className='icon-info' />
-								</Card.Body>
-							</Link>
-						</Card>
-					))}
-				</div>
-			</Container>
-		</>
-	);
+					</div>
+				</Container>
+			</>
+		);
+	} catch (error) {
+		return <div>Error: No se pudo cargar los datos</div>;
+	}
 };
