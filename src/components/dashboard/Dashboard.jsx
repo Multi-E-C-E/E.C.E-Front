@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
+import {ErrMessague} from '../errorPage/errorMessage.jsx';
 import './../../css/dashboard.css';
 import image from './assets/eq.png';
 import image2 from './assets/img-practice.png';
 
 export const Dashboard = () => {
-	const { items, loanding, error } = useFecth('item/all');
+	const { items, loanding, error, detaiError } = useFecth('item/all');
+	console.log(error.toString());
 	const tools = [
 		{
 			name: 'Equipos de medicon',
@@ -24,12 +26,19 @@ export const Dashboard = () => {
 		},
 		// ...
 	];
+	
 
 	return (
 		<>
 			<Container>
 				<div className='dash-card-container'>
-					{error && <div> error </div>}
+					{error && 
+						<div>
+							<pre>{detaiError.toString()}</pre>
+							<h1>hola</h1>
+						</div>
+					}
+
 					{loanding && <div>Cargando ... </div>}
 					{items.map(item => (
 						<Card className='dash-card' key={item.name}>
