@@ -45,6 +45,7 @@
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
+	text-align: center;
 	justify-content: space-between;
 }
 
