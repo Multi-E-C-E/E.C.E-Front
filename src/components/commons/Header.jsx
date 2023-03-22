@@ -23,7 +23,7 @@ export const Header = () => {
 							key={index}
 							href={socialIcon.link}
 							target='_blank'
-							rel="noopener noreferrer"
+							rel='noopener noreferrer'
 							className='hd-icon'
 						>
 							{React.cloneElement(socialIcon.icon, {
