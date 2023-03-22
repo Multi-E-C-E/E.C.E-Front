@@ -24,6 +24,8 @@
 .h5-hd {
 	justify-content: space-between;
 	margin-bottom: 0%;
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
 	position: absolute;
 }
 .logo-2 {
@@ -63,7 +65,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-
 	.footer {
 		flex: 0;
 		position: absolute;
