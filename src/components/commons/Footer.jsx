@@ -23,15 +23,7 @@ export const Footer = () => {
 						<Col md='6'>
 							<p>&copy; ECE.</p>
 						</Col>
-						<Col md='6' className='text-md-end'>
-							<p>
-								Made with{' '}
-								<span role='img' aria-label='love'>
-									❤️
-								</span>{' '}
-								by Yo
-							</p>
-						</Col>
+						
 					</Row>
 				</Container>
 				<Navbar.Brand href='#home'></Navbar.Brand>
