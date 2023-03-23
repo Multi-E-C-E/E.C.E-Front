@@ -137,19 +137,22 @@ Estilos responsivos
 
 	/*Equipos de medicion*/
 	.dash-eq-card-container {
-		display: flex;
+		position: relative;
+		display: block;
 		flex-wrap: wrap;
 		text-align: center;
 		height: 100px;
+		margin-bottom: 20%;
 	}
 
 	.dash-eq-card {
-		width: 20rem;
+		width: 17rem;
 		border-radius: 0px;
 		margin-top: 100px;
 	}
 	.dash-eq-card:hover {
 		border-radius: 40px;
+		width: 15rem;
 		background-color: antiquewhite;
 	}
 
@@ -161,7 +164,8 @@ Estilos responsivos
 	}
 
 	.img-qe-card:hover {
-		display: block;
-		height: 11rem;
+		
+		height: 15rem;
+		width: 15rem;
 	}
 }
