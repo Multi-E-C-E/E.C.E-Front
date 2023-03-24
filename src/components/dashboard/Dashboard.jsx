@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
-import {ErrMessague} from '../errorPage/errorMessage.jsx';
 import './../../css/dashboard.css';
 import image from './assets/eq.png';
 import image2 from './assets/img-practice.png';
