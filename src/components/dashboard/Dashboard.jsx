@@ -4,39 +4,22 @@ import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
 import './../../css/dashboard.css';
-import image from './assets/eq.png';
-import image2 from './assets/img-practice.png';
+import { tools } from '../utils/utils.jsx';
 
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all');
 	console.log(error.toString());
-	const tools = [
-		{
-			name: 'Equipos de medicon',
-			img_item: image,
-			desciption: { text: 'lorem impus odio, alsison equota' },
-			path: '/tools',
-		},
-		{
-			name: 'Practicas',
-			img_item: image2,
-			desciption: { text: 'lorem impus odio' },
-			path: '/practice',
-		},
-		// ...
-	];
-	
 
 	return (
 		<>
 			<Container>
 				<div className='dash-card-container'>
-					{error && 
+					{error && (
 						<div>
 							<pre>{detaiError.toString()}</pre>
 							<h1>hola</h1>
 						</div>
-					}
+					)}
 
 					{loanding && <div>Cargando ... </div>}
 					{items.map(item => (
