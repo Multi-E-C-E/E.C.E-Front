@@ -46,19 +46,26 @@
 	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
 	display: flex;
-	
 	flex-wrap: wrap;
 	text-align: center;
 	justify-content: space-between;
 }
 .home-card {
-	width: 25rem;
-	margin: 5rem;
+	width: 27rem;
+	margin-right: 6rem;
+	margin-bottom: 5rem;
 	transition: all 0.5s;
 }
- .card-home-container .card-home-img{
-	width: 20rem;
- }
+.home-card h4 {
+	padding-left: 50px;
+	text-indent: -37px;
+	text-align: justify;
+	line-height: 2;
+	font-size: 15px;
+}
+.card-home-container .card-home-img {
+	width: 100%;
+}
 
 /* estilos para pantallas con ancho máximo de 768px 
 

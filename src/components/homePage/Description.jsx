@@ -13,6 +13,7 @@ export const Info = () => {
 						)}
 						<Card.Body>
 							{cardData.title && <h2>{cardData.title}</h2>}
+							{cardData.title2 && <h3>{cardData.title2}</h3>}
 							<h4>
 								{Array.isArray(cardData.text)
 									? cardData.text.map((text, index) => (
