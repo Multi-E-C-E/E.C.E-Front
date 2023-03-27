@@ -7,7 +7,7 @@ export const Info = () => {
 		<Container>
 			<div className='card-home-container'>
 				{cardsHomeData.map((cardData, index) => (
-					<Card  className='home-card' key={index}>
+					<Card  className='home-card'  style={{borderColor: 'white'}} key={index}>
 						{cardData.imgSrc && (
 							<Card.Img className='card-home-img' variant='top' src={cardData.imgSrc} />
 						)}
