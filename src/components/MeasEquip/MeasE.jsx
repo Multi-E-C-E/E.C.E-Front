@@ -4,6 +4,7 @@ import { Container, Typography, Grid, Box, Paper } from '@mui/material';
 // components
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
+import Render from '../commons/Render3D';
 // import videoComponent from './videoComponent';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
 
@@ -15,12 +16,14 @@ const MSE = () => {
 	// inicializar estados
 	const [image, setImage] = useState({});
 	const [video, setVideo] = useState({});
+	const [asset3D, setAsset3D] = useState({});
 
 	// asignar los assets
 	useEffect(() => {
 		if (items.Assets) {
 			setImage(findAsset(1));
 			setVideo(findAsset(2));
+			setAsset3D(findAsset(3));
 		}
 	}, [items]);
 
@@ -75,6 +78,7 @@ const MSE = () => {
 					<p>{items.description}</p>
 				</Paper>
 				{video.url && <VideoComponent video={video} />}
+				{asset3D.url && <Render asset={asset3D} />}
 			</Container>
 		</>
 	);
