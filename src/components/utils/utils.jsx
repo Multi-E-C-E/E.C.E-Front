@@ -22,11 +22,13 @@ export const tools = [
 export const cardsHomeData = [
 	{
 		title: '',
-		text: 'Bienvenido a la asignatura "Principios de Electrónica"',
+		title2: 'Bienvenido a la asignatura "Principios de Electrónica"',
+		text: '',
 		imgSrc: '',
 	},
 	{
 		title: '',
+		itle2: '',
 		text: '',
 		imgSrc: tab2,
 	},
@@ -37,6 +39,7 @@ export const cardsHomeData = [
 	},
 	{
 		title: 'Aqui encontraras :',
+		title2: '',
 		text: [
 			'Información general de los componentes electronicos de la materia',
 			'Prácticas de laboratorio para su desarrollo',
