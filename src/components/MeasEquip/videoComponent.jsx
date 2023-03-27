@@ -1,7 +1,6 @@
 import { Typography, Grid, Paper, Container } from '@mui/material';
 
 const videoComponent = ({ video }) => {
-	console.log('entro al video', video);
 	return (
 		<>
 			<Container>

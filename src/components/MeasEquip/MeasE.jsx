@@ -18,7 +18,6 @@ const MSE = () => {
 
 	// asignar los assets
 	useEffect(() => {
-		console.log('entra al hook en img', items);
 		if (items.Assets) {
 			setImage(findAsset(1));
 			setVideo(findAsset(2));

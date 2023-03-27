@@ -4,7 +4,7 @@ import { useFecth } from '../../network/useFetch';
 // Se podria usar botton base para que se active una funcion al presionar la imagen
 // Creo que se puede hacer una peticion con su numero de id para traer los datos
 const toolsList = props => {
-	const { items } = useFecth('item/all');
+	const { items } = useFecth('item/all?type=2');
 	// const list = apiData.read();
 	const enviarData = data => {
 		props.enviar(data);
