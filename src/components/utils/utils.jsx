@@ -5,7 +5,7 @@ import tab2 from '../homePage/assets/diodos_home.png';
 
 export const tools = [
 	{
-		name: 'Equipos de medicon',
+		name: 'Equipos de medición',
 		img_item: image,
 		desciption: { text: 'lorem impus odio, alsison equota' },
 		path: '/tools',

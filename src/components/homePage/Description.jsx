@@ -7,9 +7,19 @@ export const Info = () => {
 		<Container>
 			<div className='card-home-container'>
 				{cardsHomeData.map((cardData, index) => (
-					<Card  className='home-card'  style={{borderColor: 'white'}} key={index}>
+					<Card
+						className={
+							cardData.imgSrc ? 'home-card card-with-image' : 'home-card'
+						}
+						style={cardData.imgSrc ? { borderColor: 'white' } : {}}
+						key={index}
+					>
 						{cardData.imgSrc && (
-							<Card.Img className='card-home-img' variant='top' src={cardData.imgSrc} />
+							<Card.Img
+								className='card-home-img'
+								variant='top'
+								src={cardData.imgSrc}
+							/>
 						)}
 						<Card.Body>
 							{cardData.title && <h2>{cardData.title}</h2>}
