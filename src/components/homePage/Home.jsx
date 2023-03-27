@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import ControlledCarousel from './Carousel';
 import { MdStart } from 'react-icons/md';
 import { Info } from './Description';
-import './../../css/home.css';
+
 
 export const Home = () => {
 	return (
