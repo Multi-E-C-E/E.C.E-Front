@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-const BASE_URL = 'http://localhost:3000/api/v1/';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const useFecth = END => {
 	const [items, setItems] = useState([]);
 	const [loanding, setLoanding] = useState(true);
 	const [error, setError] = useState(false);
-	const [detaiError, setErrorDetail]= useState([]);
-	
+	const [detaiError, setErrorDetail] = useState([]);
 
 	useEffect(() => {
 		fetch(BASE_URL + END, {
@@ -13,10 +12,11 @@ export const useFecth = END => {
 		})
 			.then(response => response.json())
 			.then(data => setItems(data))
-			.catch(error =>  {console.log(error)
-			setError(true)
-			setErrorDetail(error)
-			}  )
+			.catch(error => {
+				console.log(error);
+				setError(true);
+				setErrorDetail(error);
+			})
 			.finally(() => setLoanding(false));
 	}, []);
 
