@@ -4,7 +4,7 @@ import { Container, Typography, Grid, Box, Paper } from '@mui/material';
 // components
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
-import Render from '../commons/Render3D';
+import M3D from '../commons/M3D';
 // import videoComponent from './videoComponent';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
 
@@ -78,7 +78,7 @@ const MSE = () => {
 					<p>{items.description}</p>
 				</Paper>
 				{video.url && <VideoComponent video={video} />}
-				{asset3D.url && <Render asset={asset3D} />}
+				{asset3D.url && <M3D asset3D={asset3D} />}
 			</Container>
 		</>
 	);
