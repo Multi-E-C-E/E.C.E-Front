@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
 import '../../css/home.css'
@@ -66,7 +67,9 @@ const ComponentDetail = ({ id }) => {
 				</div>
 			</div>}
 			<br /> <hr /> <br />
-			<div className="row"><h2>Practicas</h2></div>
+			<Link to='/practice'>
+				<h5>Practicas</h5>
+			</Link>
 		</Container>
 	);
 };
