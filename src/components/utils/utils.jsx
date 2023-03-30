@@ -19,6 +19,22 @@ export const tools = [
 	// ...
 ];
 
+export const components = [
+	{
+		name: 'Resistencias',
+		img_item: image,
+		desciption: { text: 'lorem impus odio, alsison equota' },
+		path: '/components',
+	},
+	{
+		name: 'Diodos',
+		img_item: image2,
+		desciption: { text: 'lorem impus odio' },
+		path: '/components',
+	},
+	// ...
+];
+
 export const cardsHomeData = [
 	{
 		title: '',
