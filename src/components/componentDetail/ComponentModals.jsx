@@ -1,10 +1,7 @@
 import { Container, Modal, Card, Button } from "react-bootstrap";
 import { useState } from "react";
-// import { useShow } from '../../../Hooks/useShow.jsx';
 
-
-
-export const SymbologyModal =  ( { data } ) => {
+export const LateralModal =  ( { data } ) => {
 
     const [show, setShow] = useState(false);
 
@@ -14,16 +11,18 @@ export const SymbologyModal =  ( { data } ) => {
     return (
         <Container>
        <div className="row">
+        {console.log(data)}
             <div className="col-12">
-                <Button variant="primary" onClick={handleShow}> Symbology </Button>
+                <Button variant="primary" onClick={handleShow}> {data.title} </Button>
             </div>
         </div>
+        <br />
         <Modal show={show} onHide={handleClose} className="text-center">
         <Modal.Header closeButton>
-            <Modal.Title>Symbology</Modal.Title>
+            <Modal.Title> {data.title} </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            { data && <Card className='dash-card'>
+            { data && data.haveImg && <Card className='dash-card'>
                 <Card.Img
                     variant='top'
                     className='img-card'

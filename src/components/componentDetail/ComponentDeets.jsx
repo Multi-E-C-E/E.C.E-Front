@@ -4,9 +4,8 @@ import { Paper } from '@mui/material';
 import '../../css/home.css'
 import {Container,Card } from 'react-bootstrap';
 import { useFecth } from '../../network/useFetch.jsx';
-import { SymbologyModal } from './modals/SymbologyModal.jsx';
-import { UsesModal } from './modals/UsesModal.jsx';
-import { WhatIsModal } from './modals/WhatIsModal.jsx';
+import { LateralModal } from './ComponentModals.jsx';
+
 
 const ComponentDetail = ({ id }) => {
 	
@@ -27,6 +26,19 @@ const ComponentDetail = ({ id }) => {
 		}
 	}, [items]);
 
+	// adecuar la data de los modales
+	const configModalData = (data) => {
+
+		return {
+			title: data.title,
+			body: data.description || data.aplication,
+			haveImg: data.haveImg,
+			image_url: data.image_url,
+			name: data.name,
+		}
+    }
+    
+
 	const findAsset = type => {
 		const asset = items.Assets.find(
 			asset => asset.TypeAsset.id_typeAsset === type
@@ -42,11 +54,9 @@ const ComponentDetail = ({ id }) => {
 			{typeof items !== 'undefined' && <div className="row">
 				{console.log(items)}
 				<div className="col-2">
-					<SymbologyModal data={items.Symbology} />
-					<br />
-					<UsesModal data={{aplication: items.aplication}} />
-					<br />
-					<WhatIsModal data={{description: items.description}} />
+					<LateralModal data={{haveImg: true, ...items.Symbology, title:"Symbology"}} />
+					<LateralModal data={{haveImg: false,  title:"What can you do?", description: items.aplication}} />
+					<LateralModal data={{haveImg: false,  title:"What is?", description: items.description}} />
 				</div>
 				<div className="col-6">
 					<br />
