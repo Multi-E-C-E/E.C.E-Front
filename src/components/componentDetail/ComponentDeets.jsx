@@ -20,16 +20,7 @@ const ComponentDetail = () => {
 		}
 	}, [items]);
 
-	// adecuar la data de los modales
-	const configModalData = data => {
-		return {
-			title: data.title,
-			body: data.description || data.aplication,
-			haveImg: data.haveImg,
-			image_url: data.image_url,
-			name: data.name,
-		};
-	};
+
 
 	const findAsset = type => {
 		const asset = items.Assets.find(
