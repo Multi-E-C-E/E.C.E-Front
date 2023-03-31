@@ -1,43 +1,39 @@
 import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import './../../css/home.css';
-import tab from './assets/tablero_home.png';
-import tab2 from './assets/diodos_home.png';
-
-const cardText1 = `Bienvenido a la asignatura "Principios de Electrónica"`;
-
-const cardTitle4 = 'Aqui encontraras :';
-const card4Text1 =
-	'Información general de los componentes electronicos de la materia';
-const card4Text2 = 'Prácticas de laboratorio para su desarrollo';
-const card4Text3 =
-	'Cuadernillos de ejerccicios y hojas de datos, referentes a los componentes electrónicos';
+import { cardsHomeData } from '../utils/utils';
 
 export const Info = () => {
 	return (
 		<Container>
-			<div className='card-container'>
-				<Card className='card'>
-					<Card.Body>
-						<h1> {cardText1}</h1>
-					</Card.Body>
-				</Card>
-				<Card className='card'>
-					<Card.Img variant='top' className='home-img-card ' src={tab2} />
-				</Card>
-				<Card className='card'>
-					<Card.Img variant='top' className='home-img-card ' src={tab} />
-				</Card>
-				<Card className='card'>
-					<Card.Body>
-						<h2>{cardTitle4}</h2>
-						<h4>
-							<li>{card4Text1}</li>
-							<li>{card4Text2}</li>
-							<li>{card4Text3}</li>
-						</h4>
-					</Card.Body>
-				</Card>
+			<div className='card-home-container'>
+				{cardsHomeData.map((cardData, index) => (
+					<Card
+						className={
+							cardData.imgSrc ? 'home-card card-with-image' : 'home-card'
+						}
+						style={cardData.imgSrc ? { borderColor: 'white' } : {}}
+						key={index}
+					>
+						{cardData.imgSrc && (
+							<Card.Img
+								className='card-home-img'
+								variant='top'
+								src={cardData.imgSrc}
+							/>
+						)}
+						<Card.Body>
+							{cardData.title && <h2>{cardData.title}</h2>}
+							{cardData.title2 && <h3>{cardData.title2}</h3>}
+							<h4>
+								{Array.isArray(cardData.text)
+									? cardData.text.map((text, index) => (
+											<li key={index}>{text}</li>
+									  ))
+									: cardData.text}
+							</h4>
+						</Card.Body>
+					</Card>
+				))}
 			</div>
 		</Container>
 	);
