@@ -20,5 +20,11 @@ export const useFecth = END => {
 			.finally(() => setLoanding(false));
 	}, []);
 
-	return { items, loanding, error, detaiError };
+	return { items, loanding, error, detaiError, setItems };
+};
+
+export const useFecthAwait = async END => {
+	const res = await fetch(BASE_URL + END);
+	const json = await res.json();
+	return { json };
 };
