@@ -23,6 +23,7 @@ Estilos para las cards de los componentes electronicos
 }
 .dash-card .card-title {
 	font-style: italic;
+	color: black;
 	font-family: 'Times New Roman', Times, serif;
 	font-size: 0.9em;
 }

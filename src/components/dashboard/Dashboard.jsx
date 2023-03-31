@@ -7,7 +7,7 @@ import './../../css/dashboard.css';
 import { tools } from '../utils/utils.jsx';
 
 export const Dashboard = () => {
-	const { items, loanding, error, detaiError } = useFecth('item/all');
+	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
 	console.log(error.toString());
 
 	return (
@@ -24,17 +24,24 @@ export const Dashboard = () => {
 					{loanding && <div>Cargando ... </div>}
 					{items.map(item => (
 						<Card className='dash-card' key={item.name}>
-							<Card.Img
-								variant='top'
-								className='img-card '
-								src={item.preview_url}
-								alt={item.name}
-							/>
-							<Card.Body>
-								<Card.Title>{item.name}</Card.Title>
-								<Card.Text>{item.TypeItem.name_type}</Card.Text>
-								<TbInfoOctagon className='icon-info' />
-							</Card.Body>
+							<Link
+								className='link-no-style card-title'
+								to={`/component/${item.id_item}`}
+								onClick={handleClick}
+							>
+								<Card.Img
+									variant='top'
+									className='img-card '
+									src={item.preview_url}
+									alt={item.name}
+								/>
+								<Card.Body>
+									<Card.Title>{item.name}</Card.Title>
+									<Card.Text>{item.TypeItem.name_type}</Card.Text>
+
+									<TbInfoOctagon className='icon-info' />
+								</Card.Body>
+							</Link>
 						</Card>
 					))}
 				</div>
