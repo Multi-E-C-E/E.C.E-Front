@@ -11,8 +11,7 @@ const ComponentDetail = () => {
 
 	// inicializar estados
 	const [image, setImage] = useState({});
-	const [video, setVideo] = useState({});
-	const [asset3D, setAsset3D] = useState({});
+
 
 	// asignar los assets
 	useEffect(() => {
