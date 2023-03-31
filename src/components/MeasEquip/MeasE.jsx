@@ -1,24 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Container, Typography, Grid, Box, Paper } from '@mui/material';
-
-// components
+import { useFecth, useFecthAwait } from '../../network/useFetch';
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
 import M3D from '../commons/M3D';
-// import videoComponent from './videoComponent';
-import { useFecth, useFecthAwait } from '../../network/useFetch';
 
 const MSE = () => {
-	// hacer peticion inicial
 	const { items, detaiError, error, loanding, setItems } =
 		useFecth('item/detail/3');
 
-	// inicializar estados
 	const [image, setImage] = useState({});
 	const [video, setVideo] = useState({});
 	const [asset3D, setAsset3D] = useState({});
 
-	// asignar los assets
 	useEffect(() => {
 		if (items.Assets) {
 			setImage(findAsset(1));
@@ -27,7 +21,6 @@ const MSE = () => {
 		}
 	}, [items]);
 
-	// Funcion que recibe los el item selecionado
 	const functionParent = async datos => {
 		const { json } = await useFecthAwait(`item/detail/${datos}`);
 		setItems(json);
@@ -40,7 +33,6 @@ const MSE = () => {
 		return asset ?? {};
 	};
 
-	// renderizar
 	return (
 		<>
 			<Container fixed>
@@ -50,7 +42,6 @@ const MSE = () => {
 						<h1>hola</h1>
 					</div>
 				)}
-
 				{loanding && <div>Cargando ... </div>}
 				<Typography variant='h2' align='center'>
 					{items.name}
