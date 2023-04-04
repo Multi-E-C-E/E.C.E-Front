@@ -12,7 +12,7 @@ export const Header = () => {
 				<Link to={'/'}>
 					<img
 						className='logo'
-						src='https://drive.google.com/uc?export=view&id=1tw0vw4s1eH4g-FfFoF36eEoB0bX3CcHD'
+						src='https://drive.google.com/uc?export=view&id=1kGSAaS0SqQGyEj5F4EqGVhifCp8wg8W6'
 					/>
 				</Link>
 			</Navbar>

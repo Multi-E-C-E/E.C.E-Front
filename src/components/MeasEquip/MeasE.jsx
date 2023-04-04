@@ -44,8 +44,9 @@ const MSE = () => {
 			)}
 			{loanding && <div>Cargando ... </div>}
 
-			{items.name}
 			<ToolsList enviar={functionParent} />
+
+			<h1>{items.name}</h1>
 			<img src={image.url} alt={image.name} style={{ width: '100%' }} />
 			<p>{items.description}</p>
 			{video.url && <VideoComponent video={video} />}
