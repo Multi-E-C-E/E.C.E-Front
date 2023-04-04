@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
+import PropTypes from 'prop-types';
 
-const m3D = ({ asset3D }) => {
+const M3D = ({ asset3D }) => {
 	return (
 		<Container maxWidth='sm'>
 			<div style={{ width: '100%', height: '50vh' }}>
@@ -13,4 +14,11 @@ const m3D = ({ asset3D }) => {
 	);
 };
 
-export default m3D;
+M3D.propTypes = {
+	asset3D: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		url: PropTypes.string.isRequired,
+	}).isRequired,
+};
+
+export default M3D;

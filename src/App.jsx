@@ -7,17 +7,19 @@ import { ErrMessague } from './components/errorPage/errorMessage';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
 import { Practice } from './components/practices/practice';
+import Background from './components/commons/AnimatedBackgroung';
 
 export const App = () => {
 	const { pathname } = useLocation();
 	return (
 		<>
+			<Background />
 			<Header />
 			<div className={pathname === '/' ? '' : 'mt-5'}>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboard' element={<Dashboard />}></Route>
-					<Route path='/component' element={<ComponentDetail />}></Route>
+					<Route path='/component/:id' element={<ComponentDetail />}></Route>
 					<Route path='/tools' element={<MSE />}></Route>
 					<Route path='/practice' element={<Practice />}></Route>
 					<Route path='*' element={<ErrMessague />}></Route>

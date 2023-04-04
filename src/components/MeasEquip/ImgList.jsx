@@ -1,7 +1,8 @@
 import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 import { useFecth } from '../../network/useFetch';
+import PropTypes from 'prop-types';
 
-const toolsList = props => {
+const ToolsList = props => {
 	const { items } = useFecth('item/all?type=2');
 
 	const enviarData = data => {
@@ -29,5 +30,7 @@ const toolsList = props => {
 		</>
 	);
 };
-
-export default toolsList;
+ToolsList.propTypes = {
+	enviar: PropTypes.func.isRequired,
+};
+export default ToolsList;
