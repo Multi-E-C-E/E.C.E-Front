@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Container, Typography, Grid, Box, Paper } from '@mui/material';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
+import { Carousel, Container } from 'react-bootstrap';
+import { FaLongArrowAltDown } from 'react-icons/fa';
+import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
-import M3D from '../commons/M3D';
+import './../../css/mepd.css';
 
 const MSE = () => {
 	const { items, detaiError, error, loanding, setItems } =
@@ -12,6 +14,7 @@ const MSE = () => {
 	const [image, setImage] = useState({});
 	const [video, setVideo] = useState({});
 	const [asset3D, setAsset3D] = useState({});
+	const [assets, setAssets] = useState([]);
 
 	useEffect(() => {
 		if (items.Assets) {
@@ -24,18 +27,26 @@ const MSE = () => {
 	const functionParent = async datos => {
 		const { json } = await useFecthAwait(`item/detail/${datos}`);
 		setItems(json);
+		setAssets([]);
 	};
 
 	const findAsset = type => {
 		const asset = items.Assets.find(
 			asset => asset.TypeAsset.id_typeAsset === type
 		);
+		if (asset) assets.push(asset);
 		return asset ?? {};
+	};
+
+	const [index, setIndex] = useState(0);
+
+	const handleSelect = (selectedIndex, e) => {
+		setIndex(selectedIndex);
 	};
 
 	return (
 		<>
-			<Container fixed>
+			<Container>
 				{error && (
 					<div>
 						<pre>{detaiError.toString()}</pre>
@@ -43,33 +54,32 @@ const MSE = () => {
 					</div>
 				)}
 				{loanding && <div>Cargando ... </div>}
-				<Typography variant='h2' align='center'>
-					{items.name}
-				</Typography>
-				<Grid container alignItems={'center'}>
-					<Grid item xs={12} sm={4} md={6} lg={4} xl={4}>
-						<Box
-							sx={{
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'center',
-							}}
-						>
-							<ToolsList enviar={functionParent} />
-						</Box>
-					</Grid>
-					<Grid item xs={12} sm={8} md={6} lg={8} xl={8}>
-						<Container maxWidth='sm'>
-							<img src={image.url} alt={image.name} style={{ width: '100%' }} />
-						</Container>
-					</Grid>
-				</Grid>
-				<Paper sx={{ p: 2 }}>
-					<h3>Descripcion</h3>
+				<h3 className='title-g'>
+					Selecciona un equipo de medicion <FaLongArrowAltDown />{' '}
+				</h3>
+				<ToolsList enviar={functionParent} />
+
+				<h1>{items.name}</h1>
+				<div className='tools-items'>
+					{assets.length > 0 && <TabAssets assets={assets} />}
 					<p>{items.description}</p>
-				</Paper>
-				{video.url && <VideoComponent video={video} />}
-				{asset3D.url && <M3D asset3D={asset3D} />}
+				</div>
+				<hr />
+				<Carousel
+					variant='dark'
+					activeIndex={index}
+					onSelect={handleSelect}
+					interval={null}
+				>
+					<Carousel.Item>
+						{video.url && <VideoComponent video={video} />}
+					</Carousel.Item>
+
+					<Carousel.Item>
+						<h3 className='tools-image-title'> {items.name} </h3>
+						<img src={image.url} alt={image.name} className='tools-image' />
+					</Carousel.Item>
+				</Carousel>
 			</Container>
 		</>
 	);

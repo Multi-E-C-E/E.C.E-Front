@@ -1,13 +1,37 @@
 .carousel-contaier {
-	background-color: rgba(219, 147, 147, 0.122);
 	border-bottom-left-radius: 50px;
 	border-bottom-right-radius: 50px;
+	width: 100%;
 }
 .img-carousel {
+	z-index: 0;
 	display: block;
-	height: 640px;
-	width: 62%;
-	margin: 0 auto;
+	height: 450px;
+	width: 75%;
+	margin-left: 10%;
+}
+.card-container{
+	margin-top: 1rem;
+	background-color: antiquewhite;
+}
+h4 {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+h5 {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.home-container {
+	display: flex;
+	background-color: rgba(219, 147, 147, 0.122);
+	border-bottom-left-radius: 80px;
+	border-bottom-right-radius: 80px;
+}
+.home-component-info {
+	background-color: rgb(241, 38, 38);
+	width: 50%;
 }
 
 .icon {
@@ -42,41 +66,9 @@
 	text-decoration: underline rgb(219, 147, 147);
 }
 
-.card-home-container {
-	font-style: italic;
-	font-family: 'Times New Roman', Times, serif;
-	display: flex;
-	flex-wrap: wrap;
-	text-align: center;
-	justify-content: space-between;
-}
 .home-card {
-	width: 27rem;
-	margin-right: 6rem;
-	margin-bottom: 5rem;
-	transition: all 0.5s;
+	margin: 2rem;
 }
-.home-card h4 {
-	padding-left: 50px;
-	text-indent: -37px;
-	text-align: justify;
-	line-height: 2;
-	font-size: 21px;
-}
-.home-card h3 {
-	line-height: 2;
-	font-size: 50px;
-}
-.card-home-container .card-home-img {
-	width: 100%;
-}
-
-/* estilos para pantallas con ancho máximo de 768px 
-
-
-		
-*/
-
 @media screen and (max-width: 768px) {
 	.img-carousel {
 		display: block;
