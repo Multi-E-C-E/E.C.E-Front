@@ -53,7 +53,7 @@ const configParticles = {
 			},
 		},
 		line_linked: {
-			enable: true,
+			enable: false,
 			distance: 150,
 			color: '#100d0d',
 			opacity: 0.5,
