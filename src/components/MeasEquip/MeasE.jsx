@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Container, Typography, Grid, Box, Paper } from '@mui/material';
+
 import { useFecth, useFecthAwait } from '../../network/useFetch';
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
 import M3D from '../commons/M3D';
 import './../../css/mepd.css';
+import { Container } from 'react-bootstrap';
 
 const MSE = () => {
 	const { items, detaiError, error, loanding, setItems } =
@@ -36,21 +37,26 @@ const MSE = () => {
 
 	return (
 		<>
-			{error && (
-				<div>
-					<pre>{detaiError.toString()}</pre>
-					<h1>hola</h1>
+			<Container>
+				{error && (
+					<div>
+						<pre>{detaiError.toString()}</pre>
+						<h1>hola</h1>
+					</div>
+				)}
+				{loanding && <div>Cargando ... </div>}
+
+				<ToolsList enviar={functionParent} />
+
+				<h1>{items.name}</h1>
+				<div className='tools-items'>
+					{asset3D.url && <M3D asset3D={asset3D} />}
+					<p>{items.description}</p>
 				</div>
-			)}
-			{loanding && <div>Cargando ... </div>}
 
-			<ToolsList enviar={functionParent} />
-
-			<h1>{items.name}</h1>
-			<img src={image.url} alt={image.name} style={{ width: '100%' }} />
-			<p>{items.description}</p>
-			{video.url && <VideoComponent video={video} />}
-			{asset3D.url && <M3D asset3D={asset3D} />}
+				{video.url && <VideoComponent video={video} />}
+				<img src={image.url} alt={image.name} style={{ width: '100%' }} />
+			</Container>
 		</>
 	);
 };

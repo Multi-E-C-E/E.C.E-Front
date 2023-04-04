@@ -1,5 +1,90 @@
-.title-tool {
-    
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
+.tab-container {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
 }
+
+.title-tool-tab {
+	color: black;
+	font-size: 30px;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+
+.unselected-tab {
+	color: black;
+}
+
+.tab-container .nav-link:not(.active) {
+	color: grey;
+}
+
+.tab-container .nav-link:not(.active):hover {
+	background-color: #eee;
+}
+.image-tab {
+	width: 20%;
+	border-radius: 15%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+	transition-duration: 0.5s;
+}
+.image-tab:hover {
+	width: 25%;
+	border-radius: 20%;
+}
+.tab-items {
+	display: flex;
+}
+
+/*Animación de parpadeo */
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.tab-items p {
+	animation: blink .9s ease-in-out infinite;
+	margin-top: 5rem;
+	margin-left: 4rem;
+	font-size: 20px;
+	color: rgb(35, 17, 17);
+}
+
+/* Descripcion de la herramienta */
+
+
+h1{
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	text-align: center;
+	padding: 2rem;
+}
+
+.tools-items {
+	display:flex;
+	background-color: #ffffff;
+	border-radius: 20px;
+}
+.tools-items p{
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	text-align: justify;
+	font-size: 24px;
+	padding: 2rem;
+}
+
+@media  screen and (max-width: 1198px){
+	.tools-items {
+		display:grid;
+		background-color: #ffffff;
+		border-radius: 20px;
+	}
+}
+
