@@ -7,11 +7,13 @@ import { ErrMessague } from './components/errorPage/errorMessage';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
 import { Practice } from './components/practices/practice';
+import Background from './components/commons/AnimatedBackgroung';
 
 export const App = () => {
 	const { pathname } = useLocation();
 	return (
 		<>
+			<Background />
 			<Header />
 			<div className={pathname === '/' ? '' : 'mt-5'}>
 				<Routes>

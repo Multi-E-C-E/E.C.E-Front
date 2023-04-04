@@ -1,6 +1,8 @@
 import { Typography, Grid, Paper, Container } from '@mui/material';
+import PropTypes from 'prop-types';
 
-const videoComponent = ({ video }) => {
+const VideoComponent = ({ video }) => {
+	console.log(video);
 	return (
 		<>
 			<Container>
@@ -26,4 +28,11 @@ const videoComponent = ({ video }) => {
 	);
 };
 
-export default videoComponent;
+VideoComponent.propTypes = {
+	video: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		url: PropTypes.string.isRequired,
+	}).isRequired,
+};
+
+export default VideoComponent;
