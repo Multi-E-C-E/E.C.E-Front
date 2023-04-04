@@ -6,8 +6,8 @@ const VideoComponent = ({ video }) => {
 	return (
 		<>
 			<Container>
-				<Typography variant='h4' align='center' gutterBottom>
-					{video.name}
+				<Typography  variant='h4' align='center' gutterBottom>
+					<h3 className='title-tool-video'>{video.name}</h3>
 				</Typography>
 				<Grid container justifyContent='center'>
 					<Grid item xs={12} sm={10} md={8}>

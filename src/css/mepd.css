@@ -1,3 +1,16 @@
+/*Animación de parpadeo */
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/*Estilos para las TABS  */
 .tab-container {
 	font-family: 'Times New Roman', Times, serif;
 	font-style: italic;
@@ -24,8 +37,8 @@
 .image-tab {
 	width: 20%;
 	border-radius: 15%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 	transition-duration: 0.5s;
 }
 .image-tab:hover {
@@ -36,21 +49,8 @@
 	display: flex;
 }
 
-/*Animación de parpadeo */
-@keyframes blink {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 .tab-items p {
-	animation: blink .9s ease-in-out infinite;
+	animation: blink 0.9s ease-in-out infinite;
 	margin-top: 5rem;
 	margin-left: 4rem;
 	font-size: 20px;
@@ -59,8 +59,15 @@
 
 /* Descripcion de la herramienta */
 
+.title-g {
+	animation: blink 0.9s ease-in-out infinite;
+	font-size: 20px;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: rgb(35, 17, 17);
+}
 
-h1{
+h1 {
 	font-family: 'Times New Roman', Times, serif;
 	font-style: italic;
 	text-align: center;
@@ -68,23 +75,41 @@ h1{
 }
 
 .tools-items {
-	display:flex;
+	display: flex;
 	background-color: #ffffff;
 	border-radius: 20px;
 }
-.tools-items p{
+.tools-items p {
 	font-family: 'Times New Roman', Times, serif;
 	font-style: italic;
 	text-align: justify;
 	font-size: 24px;
 	padding: 2rem;
 }
+.tools-image-title {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	text-align: center;
+	padding: 1rem;
+}
+.tools-image {
+	width: 30%;
+	padding-top: 30px;
+	margin: 0 auto;
+	display: block;
+}
+.title-tool-video {
+	color: black;
+	font-size: 30px;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	margin-top: 30px;
+}
 
-@media  screen and (max-width: 1198px){
+@media screen and (max-width: 1198px) {
 	.tools-items {
-		display:grid;
+		display: grid;
 		background-color: #ffffff;
 		border-radius: 20px;
 	}
 }
-
