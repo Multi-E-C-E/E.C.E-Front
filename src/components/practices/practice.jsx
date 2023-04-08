@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Container, ListGroup, Button } from 'react-bootstrap';
-import './../../css/practices.css';
+import './../../css/Practices.css';
 import { Document, Page, pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -25,7 +25,7 @@ export const Practice = () => {
 				<div className='d-flex'>
 					<ListGroup
 						className='practicas-list'
-						style={{ overflowY: 'auto' , width: '20%' }}
+						style={{ overflowY: 'auto', width: '20%' }}
 					>
 						{items.slice(0, 3).map(items => (
 							<ListGroup.Item
