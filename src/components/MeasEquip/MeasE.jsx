@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
 import { Carousel, Container } from 'react-bootstrap';
-import{FaLongArrowAltDown} from 'react-icons/fa'
+import { FaLongArrowAltDown } from 'react-icons/fa';
+import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
-import M3D from '../commons/M3D';
 import './../../css/mepd.css';
 
 const MSE = () => {
@@ -14,6 +14,7 @@ const MSE = () => {
 	const [image, setImage] = useState({});
 	const [video, setVideo] = useState({});
 	const [asset3D, setAsset3D] = useState({});
+	const [assets, setAssets] = useState([]);
 
 	useEffect(() => {
 		if (items.Assets) {
@@ -26,12 +27,14 @@ const MSE = () => {
 	const functionParent = async datos => {
 		const { json } = await useFecthAwait(`item/detail/${datos}`);
 		setItems(json);
+		setAssets([]);
 	};
 
 	const findAsset = type => {
 		const asset = items.Assets.find(
 			asset => asset.TypeAsset.id_typeAsset === type
 		);
+		if (asset) assets.push(asset);
 		return asset ?? {};
 	};
 
@@ -51,12 +54,14 @@ const MSE = () => {
 					</div>
 				)}
 				{loanding && <div>Cargando ... </div>}
-				<h3 className='title-g'>Selecciona un equipo de medicion  <FaLongArrowAltDown/> </h3>
+				<h3 className='title-g'>
+					Selecciona un equipo de medicion <FaLongArrowAltDown />{' '}
+				</h3>
 				<ToolsList enviar={functionParent} />
 
 				<h1>{items.name}</h1>
 				<div className='tools-items'>
-					{asset3D.url && <M3D asset3D={asset3D} />}
+					{assets.length > 0 && <TabAssets assets={assets} />}
 					<p>{items.description}</p>
 				</div>
 				<hr />
@@ -67,7 +72,7 @@ const MSE = () => {
 					interval={null}
 				>
 					<Carousel.Item>
-						<VideoComponent video={video} />
+						{video.url && <VideoComponent video={video} />}
 					</Carousel.Item>
 
 					<Carousel.Item>
