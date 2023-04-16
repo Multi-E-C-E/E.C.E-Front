@@ -1,6 +1,5 @@
 import { Tabs, Tab } from 'react-bootstrap';
 import { useFecth } from '../../network/useFetch';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 const ToolsList = props => {
