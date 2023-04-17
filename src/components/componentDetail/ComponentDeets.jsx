@@ -1,13 +1,16 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
 import { Container, Card } from 'react-bootstrap';
+import { MdKeyboardReturn } from 'react-icons/md';
 import { useFecth } from '../../network/useFetch.jsx';
 import { LateralModal } from './ComponentModals.jsx';
 import '../../css/home.css';
+import { handleClick } from '../commons/onHandleClick.jsx';
 const ComponentDetail = () => {
 	const { id } = useParams();
 	const { items, detaiError, error, loanding } = useFecth('item/detail/' + id);
+	const location = useLocation();
 
 	// inicializar estados
 	const [image, setImage] = useState({});
@@ -33,7 +36,17 @@ const ComponentDetail = () => {
 		<>
 			<Container className='text-center'>
 				<div className='row'>
-					<h1>Details</h1>
+				<div className="col-3">
+					<Link to={location.state?.from || '/dashboard'} onClick={handleClick}>
+								<MdKeyboardReturn className='icon' />
+							</Link> 
+					</div>
+					<div className="col-6">
+						<h1>Details</h1>
+					</div>
+				</div>
+				<div className='text-center'>
+					<h2>{items.name}</h2>				
 				</div>
 				{error && <div>{detaiError.toString()}</div>}
 				{loanding && <div>Cargando ... </div>}
@@ -77,7 +90,7 @@ const ComponentDetail = () => {
 					</div>
 				)}
 				<br /> <hr /> <br />
-				<Link to='/practice'>
+				<Link to='/practice' state={{from: location.pathname}}>
 					<h5>Practicas</h5>
 				</Link>
 			</Container>

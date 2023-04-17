@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
 import { Carousel, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown } from 'react-icons/fa';
+import { MdKeyboardReturn } from 'react-icons/md';
+import { handleClick } from '../commons/onHandleClick';
 import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
 import VideoComponent from './videoComponent';
@@ -15,6 +18,7 @@ const MSE = () => {
 	const [video, setVideo] = useState({});
 	const [asset3D, setAsset3D] = useState({});
 	const [assets, setAssets] = useState([]);
+	const location = useLocation();
 
 	useEffect(() => {
 		if (items.Assets) {
@@ -59,7 +63,16 @@ const MSE = () => {
 				</h3>
 				<ToolsList enviar={functionParent} />
 
-				<h1>{items.name}</h1>
+				<div className="row align-items-center">
+					<div className="col-3">
+					<Link to={location.state?.from || '/dashboard'} onClick={handleClick}>
+								<MdKeyboardReturn className='icon' />
+							</Link> 
+					</div>
+					<div className="col-6">
+						<h1>{items.name}</h1>
+					</div>
+				</div>
 				<div className='tools-items'>
 					{assets.length > 0 && <TabAssets assets={assets} />}
 					<p>{items.description}</p>

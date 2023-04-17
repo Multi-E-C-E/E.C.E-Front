@@ -1,5 +1,5 @@
 import { handleClick } from '../commons/onHandleClick.jsx';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
@@ -8,6 +8,7 @@ import { tools } from '../utils/utils.jsx';
 
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
+	const location = useLocation().pathname;
 	console.log(error.toString());
 
 	return (
@@ -27,6 +28,7 @@ export const Dashboard = () => {
 							<Link
 								className='link-no-style card-title'
 								to={`/component/${item.id_item}`}
+								state={{ from: location}}
 								onClick={handleClick}
 							>
 								<Card.Img
@@ -52,6 +54,7 @@ export const Dashboard = () => {
 							<Link
 								className='link-no-style'
 								to={item.path}
+								state={{ from: location}}
 								onClick={handleClick}
 							>
 								<Card.Img
