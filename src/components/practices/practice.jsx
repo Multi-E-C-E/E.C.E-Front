@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFecth } from '../../network/useFetch.jsx';
-import { Container, ListGroup, Button } from 'react-bootstrap';
+import { Container, ListGroup } from 'react-bootstrap';
 import './../../css/Practices.css';
-import { Document, Page, pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export const Practice = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/practices');
 	const [selectedPdfUrl, setSelectedPdfUrl] = useState(null);
-	const [showPdf, setShowPdf] = useState(false);
 
 	const handlePdfSelection = pdfUrl => {
 		setSelectedPdfUrl(pdfUrl + '#zoom=100');
-		setShowPdf(true);
 	};
+
+	useEffect(() => {
+		console.log(items);
+		if (items.length > 0) setSelectedPdfUrl(items[0].file_url);
+	}, [items]);
 
 	return (
 		<>
@@ -23,32 +24,19 @@ export const Practice = () => {
 					<h2>Selecciona una parctica para ver</h2>
 				</div>
 				<div className='d-flex'>
-					<ListGroup
-						className='practicas-list'
-						style={{ overflowY: 'auto', width: '20%' }}
-					>
+					<ListGroup>
 						{items.slice(0, 3).map(items => (
 							<ListGroup.Item
 								key={items.id_practice}
 								style={{ wordWrap: 'break-word' }}
+								onClick={() => handlePdfSelection(items.file_url)}
 							>
-								<a
-									href={items.file_url}
-									onClick={e => {
-										e.preventDefault();
-										handlePdfSelection(items.file_url);
-									}}
-								>
-									Practica {items.id_practice}
-								</a>
+								Practica {items.id_practice}
 							</ListGroup.Item>
 						))}
 					</ListGroup>
 					<div className='embed.pdf' style={{ width: '80%' }}>
-						<iframe
-							className='embed-responsive-item'
-							src={selectedPdfUrl}
-						></iframe>
+						<iframe src={selectedPdfUrl}></iframe>
 					</div>
 				</div>
 			</Container>
