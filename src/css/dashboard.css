@@ -10,17 +10,20 @@ Estilos para las cards de los componentes electronicos
 }
 
 .dash-card {
-	width: 15rem;
+	width: 20rem;
 	transition: all 0.5s;
+}
+.dash-card:hover {
+	width: 22rem;
+	background-color: antiquewhite;
+	border-radius: 20px;
 }
 
 .img-card {
-	height: 15rem;
+	height: 8rem;
 	transition: all 0.5s;
 }
-.img-card:hover {
-	height: 17rem;
-}
+
 .dash-card .card-title {
 	font-style: italic;
 	color: black;
@@ -33,11 +36,7 @@ Estilos para las cards de los componentes electronicos
 	font-size: 0.9;
 }
 
-.dash-card:hover {
-	width: 17rem;
-	background-color: antiquewhite;
-	border-radius: 20px;
-}
+
 
 .icon-info {
 	display: block;
@@ -90,15 +89,15 @@ Estilos para la card de equipos de medicion
 
 .img-qe-card {
 	display: block;
-	height: 25rem;
+	height: 12rem;
 	margin: 0 auto;
 	transition: all 0.7s;
 }
 
 .img-qe-card:hover {
 	display: block;
-	height: 27rem;
-	width: 27rem;
+	height: 15rem;
+	
 }
 
 /*

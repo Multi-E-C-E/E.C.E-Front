@@ -15,7 +15,7 @@ export const App = () => {
 		<>
 			<Background />
 			<Header />
-			<div className={pathname === '/' ? '' : 'mt-5'}>
+			<div className={pathname === '/' ? '' : 'mt-4'}>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboard' element={<Dashboard />}></Route>
