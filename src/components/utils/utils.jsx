@@ -35,31 +35,18 @@ export const components = [
 	// ...
 ];
 
-export const cardsHomeData = [
+export const data = [
 	{
-		title: '',
-		title2: 'Bienvenido a la asignatura "Principios de Electrónica"',
-		text: '',
+		title: 'Bienvenido a la asignatura "Principios de Electrónica"',
+		text: [],
 		imgSrc: '',
 	},
 	{
-		title: '',
-		itle2: '',
-		text: '',
-		imgSrc: tab2,
-	},
-	{
-		title: '',
-		text: '',
-		imgSrc: tab,
-	},
-	{
-		title: 'Aqui encontraras :',
-		title2: '',
+		title: 'Aquí encontrarás:',
 		text: [
-			'Información general de los componentes electronicos de la materia',
+			'Información general de los componentes electrónicos de la materia',
 			'Prácticas de laboratorio para su desarrollo',
-			'Cuadernillos de ejerccicios y hojas de datos, referentes a los componentes electrónicos',
+			'Cuadernillos de ejercicios y hojas de datos, referentes a los componentes electrónicos',
 		],
 		imgSrc: '',
 	},
