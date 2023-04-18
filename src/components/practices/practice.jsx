@@ -1,15 +1,11 @@
-import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useFecth } from '../../network/useFetch.jsx';
-import { MdKeyboardReturn } from 'react-icons/md'
 import { Container, ListGroup } from 'react-bootstrap';
-import { handleClick } from '../commons/onHandleClick.jsx'
 import './../../css/Practices.css';
 
 export const Practice = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/practices');
 	const [selectedPdfUrl, setSelectedPdfUrl] = useState(null);
-	const { state } = useLocation();
 
 	const handlePdfSelection = pdfUrl => {
 		setSelectedPdfUrl(pdfUrl + '#zoom=100');
@@ -22,19 +18,9 @@ export const Practice = () => {
 
 	return (
 		<>
-			{console.log('lugar', state)}
 			<Container>
-				 <div className="row align-items-center">
-					<div className="col-3">
-					<Link to={state?.from || '/dashboard'} onClick={handleClick}>
-								<MdKeyboardReturn className='icon' />
-							</Link> 
-					</div>
-					<div className="col-6">
-						<h1>Practicas</h1>
-					</div>
-				 </div>
 				<div className='text-center'>
+						<h1>Practicas</h1>
 					<h2>Selecciona una parctica para ver</h2>
 				</div>
 				<div className='d-flex'>

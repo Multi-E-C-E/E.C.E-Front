@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { AiOutlineHome } from 'react-icons/ai'
 
 import Navbar from 'react-bootstrap/Navbar';
+import '../../css/float.css'
 
 export const Header = () => {
+	const { pathname } = useLocation();
 	return (
 		<>
 			<header>
@@ -15,6 +18,9 @@ export const Header = () => {
 						src='https://drive.google.com/uc?export=view&id=1kGSAaS0SqQGyEj5F4EqGVhifCp8wg8W6'
 					/>
 				</Link>
+				<Link to='/dashboard' >
+					{ (pathname !== '/' && pathname !== '/dashboard') && <AiOutlineHome className='btn-flotante'  /> }
+        		</Link>
 			</Navbar>
 		</>
 	);

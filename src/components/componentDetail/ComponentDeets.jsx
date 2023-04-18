@@ -1,16 +1,12 @@
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
 import { Container, Card } from 'react-bootstrap';
-import { MdKeyboardReturn } from 'react-icons/md';
 import { useFecth } from '../../network/useFetch.jsx';
 import { LateralModal } from './ComponentModals.jsx';
-import '../../css/home.css';
-import { handleClick } from '../commons/onHandleClick.jsx';
 const ComponentDetail = () => {
 	const { id } = useParams();
 	const { items, detaiError, error, loanding } = useFecth('item/detail/' + id);
-	const location = useLocation();
 
 	// inicializar estados
 	const [image, setImage] = useState({});
@@ -35,19 +31,8 @@ const ComponentDetail = () => {
 	return (
 		<>
 			<Container className='text-center'>
-				<div className='row'>
-				<div className="col-3">
-					<Link to={location.state?.from || '/dashboard'} onClick={handleClick}>
-								<MdKeyboardReturn className='icon' />
-							</Link> 
-					</div>
-					<div className="col-6">
-						<h1>Details</h1>
-					</div>
-				</div>
-				<div className='text-center'>
-					<h2>{items.name}</h2>				
-				</div>
+				<h1>Details</h1>
+				<h2>{items.name}</h2>				
 				{error && <div>{detaiError.toString()}</div>}
 				{loanding && <div>Cargando ... </div>}
 				{typeof items !== 'undefined' && (
@@ -76,7 +61,6 @@ const ComponentDetail = () => {
 							<br />
 							<Card.Img
 								variant='top'
-								className='img-card '
 								src={image.url}
 								alt={image.name}
 							/>
@@ -90,7 +74,7 @@ const ComponentDetail = () => {
 					</div>
 				)}
 				<br /> <hr /> <br />
-				<Link to='/practice' state={{from: location.pathname}}>
+				<Link to='/practice'>
 					<h5>Practicas</h5>
 				</Link>
 			</Container>

@@ -25,10 +25,9 @@ export const LateralModal = ({ data }) => {
 				</Modal.Header>
 				<Modal.Body>
 					{data && data.haveImg && (
-						<Card className='dash-card'>
+						<Card>
 							<Card.Img
 								variant='top'
-								className='img-card'
 								src={data.image_url}
 								alt={data.name}
 							/>
