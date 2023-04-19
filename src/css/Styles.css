@@ -45,22 +45,22 @@ header {
 	height: 60px;
 	padding: '0px 15px';
    /* ff 3.6+ */
-   background:-moz-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%); 
+   background:-moz-linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%); 
 
    /* safari 5.1+,chrome 10+ */
-   background:-webkit-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+   background:-webkit-linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%);
 
    /* opera 11.10+ */
-   background:-o-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+   background:-o-linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%);
 
    /* ie 6-9 */
    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E97D30', endColorstr='#FF864C', GradientType=0 );
 
    /* ie 10+ */
-   background:-ms-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+   background:-ms-linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%);
 
    /* global 94%+ browsers support */
-   background:linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+   background:linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%);
 }
 body {
 	position: relative;

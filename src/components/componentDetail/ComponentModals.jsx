@@ -1,4 +1,4 @@
-import { Container, Modal, Card, Button } from 'react-bootstrap';
+import { Container, Modal, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,10 +12,14 @@ export const LateralModal = ({ data }) => {
 		<Container>
 			<div className='row'>
 				<div className='col-12'>
-					<Button variant='primary' onClick={handleShow}>
-						{' '}
-						{data.title}{' '}
-					</Button>
+					<Card  onClick={handleShow}>
+						<Card.Body className='card-dets'>
+							<Card.Title >
+								{' '}
+								{data.title}{' '}
+							</Card.Title>
+						</Card.Body>
+					</Card>
 				</div>
 			</div>
 			<br />
@@ -25,7 +29,7 @@ export const LateralModal = ({ data }) => {
 				</Modal.Header>
 				<Modal.Body>
 					{data && data.haveImg && (
-						<Card className='dash-card'>
+						<Card className='img-dets'>
 							<Card.Img
 								variant='top'
 								className='img-card'
