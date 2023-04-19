@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
-import { Carousel, Container } from 'react-bootstrap';
+import { Alert, Card, Carousel, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
-import VideoComponent from './videoComponent';
 import './../../css/mepd.css';
+import { ErrMessague } from '../errorPage/errorMessage';
 
 const MSE = () => {
 	const { items, detaiError, error, loanding, setItems } =
@@ -38,19 +38,27 @@ const MSE = () => {
 		return asset ?? {};
 	};
 
-	const [index, setIndex] = useState(0);
-
-	const handleSelect = (selectedIndex, e) => {
-		setIndex(selectedIndex);
-	};
-
 	return (
 		<>
 			<Container>
 				{error && (
-					<div>
-						<pre>{detaiError.toString()}</pre>
-						<h1>hola</h1>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							margin: 'auto',
+						}}
+					>
+						<Card>
+							<Card.Header>Error</Card.Header>
+							<Card.Body>
+								<Alert variant='danger'>
+									<pre>{detaiError.toString()}</pre>
+									<ErrMessague />
+								</Alert>
+							</Card.Body>
+						</Card>
 					</div>
 				)}
 				{loanding && <div>Cargando ... </div>}
@@ -65,21 +73,6 @@ const MSE = () => {
 					<p>{items.description}</p>
 				</div>
 				<hr />
-				<Carousel
-					variant='dark'
-					activeIndex={index}
-					onSelect={handleSelect}
-					interval={null}
-				>
-					<Carousel.Item>
-						{video.url && <VideoComponent video={video} />}
-					</Carousel.Item>
-
-					<Carousel.Item>
-						<h3 className='tools-image-title'> {items.name} </h3>
-						<img src={image.url} alt={image.name} className='tools-image' />
-					</Carousel.Item>
-				</Carousel>
 			</Container>
 		</>
 	);

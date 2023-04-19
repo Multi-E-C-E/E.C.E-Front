@@ -1,40 +1,33 @@
-import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import { cardsHomeData } from '../utils/utils';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Container } from 'react-bootstrap';
+import { data } from './../utils/utils';
 
 export const Info = () => {
 	return (
-		<Container>
-			<div className='card-home-container'>
-				{cardsHomeData.map((cardData, index) => (
-					<Card
-						className={
-							cardData.imgSrc ? 'home-card card-with-image' : 'home-card'
-						}
-						style={cardData.imgSrc ? { borderColor: 'white' } : {}}
-						key={index}
-					>
-						{cardData.imgSrc && (
-							<Card.Img
-								className='card-home-img'
-								variant='top'
-								src={cardData.imgSrc}
-							/>
-						)}
-						<Card.Body>
-							{cardData.title && <h2>{cardData.title}</h2>}
-							{cardData.title2 && <h3>{cardData.title2}</h3>}
-							<h4>
-								{Array.isArray(cardData.text)
-									? cardData.text.map((text, index) => (
-											<li key={index}>{text}</li>
-									  ))
-									: cardData.text}
-							</h4>
-						</Card.Body>
-					</Card>
-				))}
+		<>
+			<div className='home-card'>
+				<Container>
+					{data.map((item, index) => (
+						<Card className='card-container' key={index}>
+							<Card.Img variant='top' src={item.imgSrc} />
+							<Card.Body>
+								<Card.Title>
+									<h4>{item.title}</h4>
+								</Card.Title>
+							</Card.Body>
+
+							<ListGroup>
+								{item.text.map((textItem, textIndex) => (
+									<ListGroup.Item key={textIndex} className='border-0'>
+										<h5>*{textItem}</h5>
+									</ListGroup.Item>
+								))}
+							</ListGroup>
+						</Card>
+					))}
+				</Container>
 			</div>
-		</Container>
+		</>
 	);
 };
