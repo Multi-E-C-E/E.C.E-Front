@@ -7,13 +7,13 @@ export const tools = [
 	{
 		name: 'Equipos de medición',
 		img_item: image,
-		desciption: { text: 'lorem impus odio, alsison equota' },
+		desciption: { text: 'Accede a informaciond etalla aquí' },
 		path: '/tools',
 	},
 	{
 		name: 'Practicas',
 		img_item: image2,
-		desciption: { text: 'lorem impus odio' },
+		desciption: { text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos' },
 		path: '/practice',
 	},
 	// ...

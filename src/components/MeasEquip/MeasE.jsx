@@ -4,7 +4,6 @@ import { Alert, Card, Carousel, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
-import VideoComponent from './videoComponent';
 import './../../css/mepd.css';
 import { ErrMessague } from '../errorPage/errorMessage';
 
@@ -37,12 +36,6 @@ const MSE = () => {
 		);
 		if (asset) assets.push(asset);
 		return asset ?? {};
-	};
-
-	const [index, setIndex] = useState(0);
-
-	const handleSelect = (selectedIndex, e) => {
-		setIndex(selectedIndex);
 	};
 
 	return (

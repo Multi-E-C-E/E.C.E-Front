@@ -65,7 +65,7 @@ Estilos para la card de equipos de medicion
 	background-color: transparent !important;
 }
 .dash-eq-card {
-	width: 25rem;
+	width: 20rem;
 	border-radius: 0px;
 	margin-top: 10px;
 	transition: all 0.5s;

@@ -81,7 +81,10 @@ export const Dashboard = () => {
 								<Card.Body>
 									<Card.Title className='title-eq-card'>{item.name}</Card.Title>
 									<Card.Text className='text-qe-card '>
-										{item.desciption.text}
+										<div className='title-g' >
+											{item.desciption.text}
+										</div>
+										
 									</Card.Text>
 
 									<TbInfoOctagon className='icon-info' />
