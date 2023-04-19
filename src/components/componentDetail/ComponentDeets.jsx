@@ -1,9 +1,10 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
-import { Container, Card } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useFecth } from '../../network/useFetch.jsx';
 import { LateralModal } from './ComponentModals.jsx';
+import { LateralModal3D } from './ComponentModals3D.jsx';
 import '../../css/details.css';
 const ComponentDetail = () => {
 	const { id } = useParams();
@@ -11,11 +12,13 @@ const ComponentDetail = () => {
 
 	// inicializar estados
 	const [image, setImage] = useState({});
+	const [asset3D, setAsset3D] = useState({});
 
 	// asignar los assets
 	useEffect(() => {
 		if (items.Assets) {
 			setImage(findAsset(1));
+			setAsset3D(findAsset(3));
 		}
 	}, [items]);
 
@@ -59,15 +62,10 @@ const ComponentDetail = () => {
 										description: items.description,
 									}}
 								/>
+								{asset3D.url && <LateralModal3D data={asset3D} />}
 							</div>
-							<img src={image.url }className='img-detail'  />
-							<Paper sx={{ p: 2 }}>
-								{items.description}
-							</Paper>
-
-							
-							
-							
+							<img src={image.url} className='img-detail' />
+							<Paper sx={{ p: 2 }}>{items.description}</Paper>
 						</div>
 					</>
 				)}
