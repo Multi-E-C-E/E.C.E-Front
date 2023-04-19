@@ -6,10 +6,15 @@
     background-color:rgba(219, 147, 147, 0.445);
 }
 
-.img-dets {
-	z-index: 0;
-	display: block;
-	height: 450px;
+.img-detail {
+	
+	height: 350px;
 	width: 75%;
-	margin-left: 10%;
+	-webkit-margin-start: 20%;
+    -webkit-margin-end : 15%;
 }
+
+.card-container{
+    display: flex;
+}
+

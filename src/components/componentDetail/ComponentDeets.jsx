@@ -36,7 +36,7 @@ const ComponentDetail = () => {
 						<div className='row'>
 							<h1>{items.name}</h1>
 						</div>
-						<div className='row'>
+						<div className='card-container'>
 							<div className='col-2'>
 								<LateralModal
 									data={{
@@ -60,26 +60,17 @@ const ComponentDetail = () => {
 									}}
 								/>
 							</div>
-							<div className='col-6'>
-								<br />
-								<br />
-								<Card.Img
-									variant='top'
-									className='img-detail '
-									src={image.url}
-									alt={image.name}
-								/>
-							</div>
-							<div className='col-3'>
-								<Paper sx={{ p: 2 }}>
-									<h3>Descripcion</h3>
-									<p>{items.description}</p>
-								</Paper>
-							</div>
+							<img src={image.url }className='img-detail'  />
+							<Paper sx={{ p: 2 }}>
+								{items.description}
+							</Paper>
+
+							
+							
+							
 						</div>
 					</>
 				)}
-				<br /> <hr /> <br />
 			</Container>
 		</>
 	);

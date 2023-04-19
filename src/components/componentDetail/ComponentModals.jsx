@@ -1,5 +1,6 @@
 import { Container, Modal, Card } from 'react-bootstrap';
 import { useState } from 'react';
+import{GoEyeClosed} from'react-icons/go'
 import PropTypes from 'prop-types';
 
 export const LateralModal = ({ data }) => {
@@ -41,9 +42,9 @@ export const LateralModal = ({ data }) => {
 					{data && data.description}
 				</Modal.Body>
 				<Modal.Footer>
-					<button className='btn btn-danger' onClick={handleClose}>
-						Close
-					</button>
+					<GoEyeClosed  onClick={handleClose}>
+						
+					</GoEyeClosed>
 				</Modal.Footer>
 			</Modal>
 		</Container>
