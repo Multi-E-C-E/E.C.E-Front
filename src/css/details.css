@@ -10,8 +10,10 @@
 	
 	height: 350px;
 	width: 75%;
-	-webkit-margin-start: 20%;
-    -webkit-margin-end : 15%;
+	-webkit-margin-start: 15%;
+    -webkit-margin-end : 5%;
+
+    border-radius: 15%;
 }
 
 .card-container{
