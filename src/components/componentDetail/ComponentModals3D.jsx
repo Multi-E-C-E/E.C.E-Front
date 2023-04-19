@@ -16,7 +16,7 @@ export const LateralModal3D = ({ data }) => {
 				<div className='col-12'>
 					<Card onClick={handleShow}>
 						<Card.Body className='card-dets'>
-							<Card.Title> {data.name} </Card.Title>
+							<Card.Title> {data.title} </Card.Title>
 						</Card.Body>
 					</Card>
 				</div>
@@ -24,7 +24,7 @@ export const LateralModal3D = ({ data }) => {
 			<br />
 			<Modal show={show} onHide={handleClose} className='text-center'>
 				<Modal.Header closeButton>
-					<Modal.Title> {data.name} </Modal.Title>
+					<Modal.Title> {data.title} </Modal.Title>
 				</Modal.Header>
 				<Modal.Body>{data.url && <M3D asset3D={data} />}</Modal.Body>
 				<Modal.Footer>
@@ -37,6 +37,7 @@ export const LateralModal3D = ({ data }) => {
 
 LateralModal3D.propTypes = {
 	data: PropTypes.shape({
+		title: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		url: PropTypes.string.isRequired,
 	}),

@@ -62,7 +62,11 @@ const ComponentDetail = () => {
 										description: items.description,
 									}}
 								/>
-								{asset3D.url && <LateralModal3D data={asset3D} />}
+								{asset3D.url && (
+									<LateralModal3D
+										data={{ title: <h5> Modelo 3D </h5>, ...asset3D }}
+									/>
+								)}
 							</div>
 							<img src={image.url} className='img-detail' />
 							<Paper sx={{ p: 2 }}>{items.description}</Paper>
