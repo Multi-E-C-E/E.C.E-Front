@@ -10,7 +10,7 @@ Estilos para las cards de los componentes electronicos
 }
 
 .dash-card {
-	width: 20rem;
+	width: 17rem;
 	transition: all 0.5s;
 }
 .dash-card:hover {

@@ -18,5 +18,8 @@
 
 .card-container{
     display: flex;
+    
+
+    border-radius: 1%;
 }
 
