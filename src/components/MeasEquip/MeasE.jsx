@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useFecth, useFecthAwait } from '../../network/useFetch';
-import { Alert, Card, Carousel, Container } from 'react-bootstrap';
+import { Alert, Card, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
@@ -11,9 +11,9 @@ const MSE = () => {
 	const { items, detaiError, error, loanding, setItems } =
 		useFecth('item/detail/3');
 
-	const [image, setImage] = useState({});
-	const [video, setVideo] = useState({});
-	const [asset3D, setAsset3D] = useState({});
+	const [, setImage] = useState({});
+	const [, setVideo] = useState({});
+	const [, setAsset3D] = useState({});
 	const [assets, setAssets] = useState([]);
 
 	useEffect(() => {
@@ -43,24 +43,23 @@ const MSE = () => {
 			<Container>
 				{error && (
 					<div
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						margin: 'auto',
-					}}
-				>
-					
-					<Card>
-						<Card.Header>Error</Card.Header>
-						<Card.Body>
-							<Alert variant='danger'>
-							<pre>{detaiError.toString()}</pre>
-								<ErrMessague />
-							</Alert>
-						</Card.Body>
-					</Card>
-				</div>
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							margin: 'auto',
+						}}
+					>
+						<Card>
+							<Card.Header>Error</Card.Header>
+							<Card.Body>
+								<Alert variant='danger'>
+									<pre>{detaiError.toString()}</pre>
+									<ErrMessague />
+								</Alert>
+							</Card.Body>
+						</Card>
+					</div>
 				)}
 				{loanding && <div>Cargando ... </div>}
 				<h3 className='title-g'>
@@ -74,7 +73,6 @@ const MSE = () => {
 					<p>{items.description}</p>
 				</div>
 				<hr />
-				
 			</Container>
 		</>
 	);

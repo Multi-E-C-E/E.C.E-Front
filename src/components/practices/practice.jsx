@@ -36,7 +36,7 @@ export const Practice = () => {
 						))}
 					</ListGroup>
 					<div className='embed.pdf' style={{ width: '80%' }}>
-						<iframe src={selectedPdfUrl}></iframe>
+						<iframe src={selectedPdfUrl} className='view-pdf'></iframe>
 					</div>
 				</div>
 			</Container>
