@@ -3,7 +3,6 @@ import { Header } from './components/commons/Header';
 import { Footer } from './components/commons/Footer';
 import { Home } from './components/homePage/Home';
 import { Dashboard } from './components/dashboard/Dashboard';
-import { ErrMessague } from './components/errorPage/errorMessage';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
 import { Practice } from './components/practices/practice';
@@ -22,7 +21,7 @@ export const App = () => {
 					<Route path='/component/:id' element={<ComponentDetail />}></Route>
 					<Route path='/tools' element={<MSE />}></Route>
 					<Route path='/practice' element={<Practice />}></Route>
-					<Route path='*' element={<ErrMessague />}></Route>
+					<Route path='*' element={<Home />}></Route>
 				</Routes>
 			</div>
 			<Footer />

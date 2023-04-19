@@ -1,10 +1,11 @@
 import { handleClick } from '../commons/onHandleClick.jsx';
 import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Container, Alert } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
 import './../../css/dashboard.css';
 import { tools } from '../utils/utils.jsx';
+import { ErrMessague } from '../errorPage/errorMessage.jsx';
 
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
@@ -15,13 +16,29 @@ export const Dashboard = () => {
 			<Container>
 				<div className='dash-card-container'>
 					{error && (
-						<div>
-							<pre>{detaiError.toString()}</pre>
-							<h1>hola</h1>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								margin: 'auto',
+							}}
+						>
+							
+							<Card>
+								<Card.Header>Error</Card.Header>
+								<Card.Body>
+									<Alert variant='danger'>
+									<pre>{detaiError.toString()}</pre>
+										<ErrMessague />
+									</Alert>
+								</Card.Body>
+							</Card>
 						</div>
 					)}
 
 					{loanding && <div>Cargando ... </div>}
+
 					{items.map(item => (
 						<Card className='dash-card' key={item.name}>
 							<Link
@@ -46,6 +63,7 @@ export const Dashboard = () => {
 					))}
 				</div>
 				<hr />
+
 				<div className='dash-eq-card-container'>
 					{tools.map(item => (
 						<Card className='dash-eq-card' key={item.name}>
