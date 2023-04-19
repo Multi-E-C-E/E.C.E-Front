@@ -44,9 +44,23 @@ header {
 .nav-bar {
 	height: 60px;
 	padding: '0px 15px';
-	background: #fdc830;
-	background: -webkit-linear-gradient(to right, #f37335, #c27114);
-	background: linear-gradient(to right, #f37335, #e97d30e7);
+   /* ff 3.6+ */
+   background:-moz-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%); 
+
+   /* safari 5.1+,chrome 10+ */
+   background:-webkit-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+
+   /* opera 11.10+ */
+   background:-o-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+
+   /* ie 6-9 */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E97D30', endColorstr='#FF864C', GradientType=0 );
+
+   /* ie 10+ */
+   background:-ms-linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
+
+   /* global 94%+ browsers support */
+   background:linear-gradient(90deg, #FF864C 0%, #FFB590 50%, #E97D30FC 100%);
 }
 body {
 	position: relative;
