@@ -34,8 +34,6 @@ export const Header = () => {
 						<AiOutlineHome className='btn-flotante' />
 					)}
 				</Link>
-				{pathname !== '/' && <HelpModal from={pathname} />}
-
 				<div className='icon-container'>
 					{socialIcons.map((socialIcon, index) => (
 						<a
@@ -51,6 +49,7 @@ export const Header = () => {
 						</a>
 					))}
 				</div>
+				{pathname !== '/' && <HelpModal from={pathname} />}
 			</Navbar>
 		</>
 	);
