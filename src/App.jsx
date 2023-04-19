@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/commons/Header';
-import { Footer } from './components/commons/Footer';
 import { Home } from './components/homePage/Home';
 import { Dashboard } from './components/dashboard/Dashboard';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
@@ -24,7 +23,7 @@ export const App = () => {
 					<Route path='*' element={<Home />}></Route>
 				</Routes>
 			</div>
-			<Footer />
+	
 		</>
 	);
 };

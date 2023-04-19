@@ -7,7 +7,7 @@
 .icon-container {
 	display: flex;
 	justify-content: space-between;
-	margin-right: 5%;
+	margin-right: 50%;
 }
 .hd-icon {
 	display: flex;
@@ -15,6 +15,7 @@
 	width: 20%;
 	margin-top: 1px;
 	margin-bottom: 1px;
+	-webkit-margin-start: 20%;
 	color: #f6f6f6;
 	transition: all 0.7s;
 }
