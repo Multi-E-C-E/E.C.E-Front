@@ -53,5 +53,5 @@ LateralModal.propTypes = {
 		title: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
 		image_url: PropTypes.string.isRequired,
-	}).isRequired,
+	}),
 };
