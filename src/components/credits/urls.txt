@@ -1,0 +1,4 @@
+icon;
+example: https://help.iconscout.com/hc/en-gb/articles/13811189996953-How-can-I-give-attribution
+
+rili: <a href="https://iconscout.com/icons/transistor" target="_blank">Free Transistor Icon</a> by <a href="https://iconscout.com/contributors/Payungkead" target="_blank">ic2icon</a>
