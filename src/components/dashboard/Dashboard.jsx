@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container, Alert } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
-import './../../css/dashboard.css';
+import './styles/dashboard.css';
+import './styles/images.css';
 import { tools } from '../utils/utils.jsx';
 import { ErrMessague } from '../errorPage/errorMessage.jsx';
 
@@ -24,12 +25,11 @@ export const Dashboard = () => {
 								margin: 'auto',
 							}}
 						>
-							
 							<Card>
 								<Card.Header>Error</Card.Header>
 								<Card.Body>
 									<Alert variant='danger'>
-									<pre>{detaiError.toString()}</pre>
+										<pre>{detaiError.toString()}</pre>
 										<ErrMessague />
 									</Alert>
 								</Card.Body>
@@ -38,59 +38,42 @@ export const Dashboard = () => {
 					)}
 
 					{loanding && <div>Cargando ... </div>}
-
 					{items.map(item => (
-						<Card className='dash-card' key={item.name}>
+						<div className='img_container' key={item.id_item}>
 							<Link
 								className='link-no-style card-title'
 								to={`/component/${item.id_item}`}
 								onClick={handleClick}
 							>
-								<Card.Img
-									variant='top'
-									className='img-card '
+								<img
+									className='img_item'
+									name={item.name}
 									src={item.preview_url}
-									alt={item.name}
 								/>
-								<Card.Body>
-									<Card.Title>{item.name}</Card.Title>
-									<Card.Text>{item.TypeItem.name_type}</Card.Text>
-
-									<TbInfoOctagon className='icon-info' />
-								</Card.Body>
+								<p>{item.name}</p>
 							</Link>
-						</Card>
+						</div>
 					))}
 				</div>
 				<hr />
 
-				<div className='dash-eq-card-container'>
+				<div className='tools_container'>
 					{tools.map(item => (
-						<Card className='dash-eq-card' key={item.name}>
+						<div className='' key={item.name}>
 							<Link
 								className='link-no-style'
 								to={item.path}
 								onClick={handleClick}
 							>
-								<Card.Img
-									variant='top'
-									className='img-qe-card'
+								<img
+									className='tools_image'
 									src={item.img_item}
 									alt={item.name}
 								/>
-								<Card.Body>
-									<Card.Title className='title-eq-card'>{item.name}</Card.Title>
-									<Card.Text className='text-qe-card '>
-										<div className='title-g' >
-											{item.desciption.text}
-										</div>
-										
-									</Card.Text>
-
-									<TbInfoOctagon className='icon-info' />
-								</Card.Body>
+								{item.name}
+								<div className='title-g'>{item.desciption.text}</div>
 							</Link>
-						</Card>
+						</div>
 					))}
 				</div>
 			</Container>

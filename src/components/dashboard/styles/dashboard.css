@@ -1,0 +1,90 @@
+.dash-card .card-title {
+	font-style: italic;
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 0.9em;
+}
+.dash-card .card-text {
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 0.9;
+}
+
+.icon-info {
+	display: block;
+	height: 35px;
+	width: 70%;
+	margin: 0 auto;
+	color: black;
+	transition: color 0.5s ease;
+}
+.icon-info:hover {
+	color: rgb(219, 147, 147);
+}
+.link-no-style {
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+
+/*
+Estilos para la card de equipos de medicion 
+
+.dash-eq-card-container {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-around;
+}
+.link-no-style {
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+.dash-eq-card {
+	width: 20rem;
+	border-radius: 0px;
+	margin-top: 10px;
+	transition: all 0.5s;
+}
+.dash-eq-card:hover {
+	border-radius: 40px;
+	width: 27rem;
+	background-color: antiquewhite;
+}
+
+.title-eq-card {
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	color: rgb(17, 17, 17);
+}
+.text-qe-card {
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	color: rgb(0, 0, 0);
+}
+
+.img-qe-card {
+	display: block;
+	height: 12rem;
+	margin: 0 auto;
+	transition: all 0.7s;
+}
+
+.img-qe-card:hover {
+	display: block;
+	height: 15rem;
+	
+}
+*/
+.tools_container {
+	background: tomato;
+	justify-content: center;
+	margin: 2rem;
+
+}
+.tools{
+	margin: 2rem;
+}
+.tools_image {
+	width: 2rem;
+	height: 2rem;
+}

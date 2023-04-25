@@ -62,22 +62,7 @@ header {
    /* global 94%+ browsers support */
    background:linear-gradient(90deg, #FF864C 0%, #FF9D6C 50%, #E97D30FC 100%);
 }
-body {
-	position: relative;
-	padding-bottom: 50em;
-}
 
-.footer {
-	flex: 1;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	margin-top: 10px;
-	height: 220px;
-	background: #fdc830;
-	background: -webkit-linear-gradient(to right, #f37335, #c27114);
-	background: linear-gradient(to right, #f37335, #e97d30e7);
-}
 
 @media screen and (max-width: 768px) {
 	.footer {
