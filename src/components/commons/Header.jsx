@@ -28,8 +28,8 @@ export const Header = () => {
 						src='https://drive.google.com/uc?export=view&id=1kGSAaS0SqQGyEj5F4EqGVhifCp8wg8W6'
 					/>
 				</Link>
-				<Link to='/dashboard'>
-					{pathname !== '/' && pathname !== '/dashboard' && (
+				<Link to='/'>
+					{pathname !== '/'  && (
 						<AiOutlineHome className='btn-flotante' />
 					)}
 				</Link>
