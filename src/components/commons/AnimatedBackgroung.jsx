@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import '../../css/animatedBackground.css';
-import bgbk from './../../assets/engrane.png'
+import bgbk from './../../assets/transistor.svg'
 
 const configParticles = {
 	fpsLimit: 60,
@@ -43,7 +43,7 @@ const configParticles = {
 			},
 		},
 		size: {
-			value: 10,
+			value: 15,
 			random: true,
 			anim: {
 				enable: false,
