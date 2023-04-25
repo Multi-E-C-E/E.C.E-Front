@@ -5,6 +5,7 @@ import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
 import { Practice } from './components/practices/practice';
 import Background from './components/commons/AnimatedBackgroung';
+import { NotFound } from './components/errorPage/PageNotFound';
 
 export const App = () => {
 	const { pathname } = useLocation();
@@ -25,11 +26,4 @@ export const App = () => {
 	);
 };
 
-const NotFound = () => {
-	return (
-		<div>
-			<h1>404 Not Found</h1>
-			<p>La página que buscas no existe.</p>
-		</div>
-	);
-};
+

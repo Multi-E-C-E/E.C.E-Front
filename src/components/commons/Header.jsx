@@ -2,7 +2,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineHome } from 'react-icons/ai';
-import { HelpModal } from './HelpModal';
 import '../../css/float.css';
 import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from 'react-icons/bs';
 
@@ -49,7 +48,7 @@ export const Header = () => {
 						</a>
 					))}
 				</div>
-				{pathname !== '/' && <HelpModal from={pathname} />}
+				
 			</Navbar>
 		</>
 	);
