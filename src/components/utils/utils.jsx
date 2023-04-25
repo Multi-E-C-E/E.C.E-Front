@@ -1,26 +1,52 @@
 import image from '../dashboard/assets/eq.png';
 import image2 from '../dashboard/assets/img-practice.png';
-import tab from '../homePage/assets/tablero_home.png';
-import tab2 from '../homePage/assets/diodos_home.png';
 
 export const tools = [
 	{
 		name: 'Equipos de medición',
 		img_item: image,
-		desciption: { text: 'Accede a informaciond etalla aquí' },
+		desciption: { text: 'Accede a informacion detalla aquí' },
 		path: '/tools',
 	},
 	{
 		name: 'Practicas',
 		img_item: image2,
-		desciption: { text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos' },
+		desciption: {
+			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
+		},
 		path: '/practice',
 	},
 	{
 		name: 'Render 3D',
 		img_item: image2,
-		desciption: { text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos' },
+		desciption: {
+			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
+		},
 		path: '/dashboard',
+	},
+	{
+		name: 'Practicas',
+		img_item: image2,
+		desciption: {
+			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
+		},
+		path: '/practice',
+	},
+	{
+		name: 'Render 3D',
+		img_item: image2,
+		desciption: {
+			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
+		},
+		path: '/dashboard',
+	},
+	{
+		name: 'Practicas',
+		img_item: image2,
+		desciption: {
+			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
+		},
+		path: '/practice',
 	},
 	// ...
 ];
