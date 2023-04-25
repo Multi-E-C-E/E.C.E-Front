@@ -14,49 +14,48 @@ export const Dashboard = () => {
 
 	return (
 		<>
-			<Container>
-				<div className='dash-card-container'>
-					{error && (
-						<div
-							style={{
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center',
-								margin: 'auto',
-							}}
+			<div className='dash-card-container'>
+				{error && (
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							margin: 'auto',
+						}}
+					>
+						<Card>
+							<Card.Header>Error</Card.Header>
+							<Card.Body>
+								<Alert variant='danger'>
+									<pre>{detaiError.toString()}</pre>
+									<ErrMessague />
+								</Alert>
+							</Card.Body>
+						</Card>
+					</div>
+				)}
+
+				{loanding && <div>Cargando ... </div>}
+				{items.map(item => (
+					<div className='img_container' key={item.id_item}>
+						<Link
+							className='link-no-style card-title'
+							to={`/component/${item.id_item}`}
+							onClick={handleClick}
 						>
-							<Card>
-								<Card.Header>Error</Card.Header>
-								<Card.Body>
-									<Alert variant='danger'>
-										<pre>{detaiError.toString()}</pre>
-										<ErrMessague />
-									</Alert>
-								</Card.Body>
-							</Card>
-						</div>
-					)}
-
-					{loanding && <div>Cargando ... </div>}
-					{items.map(item => (
-						<div className='img_container' key={item.id_item}>
-							<Link
-								className='link-no-style card-title'
-								to={`/component/${item.id_item}`}
-								onClick={handleClick}
-							>
-								<img
-									className='img_item'
-									name={item.name}
-									src={item.preview_url}
-								/>
-								<p>{item.name}</p>
-							</Link>
-						</div>
-					))}
-				</div>
-				<hr />
-
+							<img
+								className='img_item'
+								name={item.name}
+								src={item.preview_url}
+							/>
+							<p>{item.name}</p>
+						</Link>
+					</div>
+				))}
+			</div>
+			<hr />
+			<Container>
 				<div className='tools_container' key={name}>
 					<div className='tools'>
 						{tools.map(item => (

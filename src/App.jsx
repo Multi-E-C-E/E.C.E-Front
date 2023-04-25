@@ -13,7 +13,7 @@ export const App = () => {
 		<>
 			<Background />
 			<Header />
-			<div className={pathname === '/' ? '' : 'mt-4'}>
+			<div className={pathname === '/'||pathname === '/dashboard' ? '' : 'mt-4'}>
 				<Routes>
 					<Route path='/' element={<Home />}></Route>
 					<Route path='/dashboard' element={<Dashboard />}></Route>

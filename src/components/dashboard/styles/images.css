@@ -3,27 +3,37 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
   background: rgba(0, 0, 0, 0.029);
-  border-radius: 2rem;
+  border-end-end-radius: 3rem;
+  border-end-start-radius: 3rem;
+  
 }
+
 
 .img_container {
   background-color: rgba(0, 255, 255, 0);
   justify-content: center;
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .img_item {
   width: 12rem;
   height: 12rem;
+  opacity: 0.85;
+  
   clip-path: circle(50% at center);
-  transition-property: clip-path;
+  filter: brightness(50%);
+  transition-property: clip-path filter;
   transition-duration: 0.7s;
   transition-timing-function: ease;
   transition-delay: ease-in;
+ 
 }
 
 .img_container:hover .img_item {
-  clip-path: circle(40% at center);
+  clip-path: circle(47% at center);
+  filter: brightness(100%);
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 p{
@@ -33,3 +43,5 @@ p{
   font-size: 1.5rem;
 	color: rgb(0, 0, 0);
 }
+
+
