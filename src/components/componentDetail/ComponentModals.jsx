@@ -35,7 +35,7 @@ export const LateralModal = ({ data }) => {
 								variant='top'
 								className='img-card'
 								src={data.image_url}
-								alt={data.name}
+								
 							/>
 						</Card>
 					)}

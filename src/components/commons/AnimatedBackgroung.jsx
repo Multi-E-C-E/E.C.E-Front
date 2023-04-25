@@ -118,7 +118,7 @@ const configParticles = {
 
 const MyParticles = () => {
 	const handleParticlesLoaded = useCallback(main => {
-		console.log(main);
+		
 	}, []);
 
 	return (

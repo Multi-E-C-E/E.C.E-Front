@@ -2,7 +2,7 @@ import { handleClick } from '../commons/onHandleClick.jsx';
 import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container, Alert } from 'react-bootstrap';
-import { TbInfoOctagon } from 'react-icons/tb';
+import { Home } from './../homePage/Home.jsx';
 import './styles/dashboard.css';
 import './styles/images.css';
 import { ErrMessague } from '../errorPage/errorMessage.jsx';
@@ -58,6 +58,8 @@ export const Dashboard = () => {
 			<Container>
 				<Options />
 			</Container>
+
+			<Home />
 		</>
 	);
 };

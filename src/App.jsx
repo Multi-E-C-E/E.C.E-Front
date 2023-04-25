@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/commons/Header';
-import { Home } from './components/homePage/Home';
 import { Dashboard } from './components/dashboard/Dashboard';
 import ComponentDetail from './components/componentDetail/ComponentDeets';
 import MSE from './components/MeasEquip/MeasE';
@@ -13,17 +12,24 @@ export const App = () => {
 		<>
 			<Background />
 			<Header />
-			<div className={pathname === '/'||pathname === '/dashboard' ? '' : 'mt-4'}>
+			<div className={pathname === '/' ? '' : 'mt-4'}>
 				<Routes>
-					<Route path='/' element={<Home />}></Route>
-					<Route path='/dashboard' element={<Dashboard />}></Route>
-					<Route path='/component/:id' element={<ComponentDetail />}></Route>
-					<Route path='/tools' element={<MSE />}></Route>
-					<Route path='/practice' element={<Practice />}></Route>
-					<Route path='*' element={<Home />}></Route>
+					<Route path='/' element={<Dashboard />} />
+					<Route path='/component/:id' element={<ComponentDetail />} />
+					<Route path='/tools' element={<MSE />} />
+					<Route path='/practice' element={<Practice />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</div>
-	
 		</>
+	);
+};
+
+const NotFound = () => {
+	return (
+		<div>
+			<h1>404 Not Found</h1>
+			<p>La página que buscas no existe.</p>
+		</div>
 	);
 };

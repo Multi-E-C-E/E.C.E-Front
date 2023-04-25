@@ -12,8 +12,7 @@ export const Practice = () => {
 	};
 
 	useEffect(() => {
-		console.log(items);
-		if (items.length > 0) setSelectedPdfUrl(items[0].file_url);
+		
 	}, [items]);
 
 	return (
