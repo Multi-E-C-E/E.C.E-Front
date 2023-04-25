@@ -1,0 +1,51 @@
+.link-no-style {
+	text-decoration: none !important;
+	background-color: transparent !important;
+}
+
+/*
+Estilos para la card de equipos de medicion 
+*/
+
+.tools_container {
+	width: 70%;
+	-webkit-margin-start: 4rem;
+	-webkit-margin-end: 4rem;
+	margin-bottom: 1rem;
+	transition-property: clip-path filter;
+	transition-duration: 0.7s;
+	transition-timing-function: ease;
+	transition-delay: ease-in;
+}
+
+.tools_container:hover .tools_image {
+	clip-path: circle(100% at center);
+}
+
+.tools_container:hover {
+	filter: brightness(70%);
+}
+.tools_link {
+	background: bisque;
+	text-decoration: none !important;
+	background-color: transparent !important;
+	border-radius: inherit;
+}
+.tools_image {
+	clip-path: circle(50% at center);
+	transition-property: clip-path filter;
+	transition-duration: 0.7s;
+	transition-timing-function: ease;
+	transition-delay: ease-in;
+}
+
+.card_title {
+	font-style: italic;
+	font-size: 14px;
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+}
+.card_text {
+	font-size: 14px;
+	text-align: start;
+}
