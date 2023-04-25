@@ -76,13 +76,21 @@ Estilos para la card de equipos de medicion
 }
 */
 .tools_container {
-	background: tomato;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	margin: 2rem;
-
+	width: 100%;
 }
-.tools{
-	margin: 2rem;
+.tools {
+	background: rgba(0, 0, 0, 0.029);
+	margin: 1rem;
+	width: 50%;
+}
+.tools_link {
+	background: bisque;
+	padding: 5%;
+	border-radius: 3rem;
+	margin: 1rem;
 }
 .tools_image {
 	width: 2rem;

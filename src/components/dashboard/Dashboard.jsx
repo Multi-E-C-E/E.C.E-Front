@@ -57,24 +57,27 @@ export const Dashboard = () => {
 				</div>
 				<hr />
 
-				<div className='tools_container'>
-					{tools.map(item => (
-						<div className='' key={item.name}>
+				<div className='tools_container' key={name}>
+					<div className='tools'>
+						{tools.map(item => (
 							<Link
 								className='link-no-style'
 								to={item.path}
 								onClick={handleClick}
+								key={item.name}
 							>
-								<img
-									className='tools_image'
-									src={item.img_item}
-									alt={item.name}
-								/>
-								{item.name}
-								<div className='title-g'>{item.desciption.text}</div>
+								<div className='tools_link' key={name}>
+									<img
+										className='tools_image'
+										src={item.img_item}
+										alt={item.name}
+									/>
+									{item.name}
+									<div className='title-g'>{item.desciption.text}</div>
+								</div>
 							</Link>
-						</div>
-					))}
+						))}
+					</div>
 				</div>
 			</Container>
 		</>
