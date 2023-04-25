@@ -5,8 +5,8 @@ import { Card, Container, Alert } from 'react-bootstrap';
 import { TbInfoOctagon } from 'react-icons/tb';
 import './styles/dashboard.css';
 import './styles/images.css';
-import { tools } from '../utils/utils.jsx';
 import { ErrMessague } from '../errorPage/errorMessage.jsx';
+import { Options } from './Options.jsx';
 
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
@@ -56,28 +56,7 @@ export const Dashboard = () => {
 			</div>
 			<hr />
 			<Container>
-				<div className='tools_container' key={name}>
-					<div className='tools'>
-						{tools.map(item => (
-							<Link
-								className='link-no-style'
-								to={item.path}
-								onClick={handleClick}
-								key={item.name}
-							>
-								<div className='tools_link' key={name}>
-									<img
-										className='tools_image'
-										src={item.img_item}
-										alt={item.name}
-									/>
-									{item.name}
-									<div className='title-g'>{item.desciption.text}</div>
-								</div>
-							</Link>
-						))}
-					</div>
-				</div>
+				<Options />
 			</Container>
 		</>
 	);

@@ -1,26 +1,4 @@
-.dash-card .card-title {
-	font-style: italic;
-	color: black;
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 0.9em;
-}
-.dash-card .card-text {
-	font-style: italic;
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 0.9;
-}
 
-.icon-info {
-	display: block;
-	height: 35px;
-	width: 70%;
-	margin: 0 auto;
-	color: black;
-	transition: color 0.5s ease;
-}
-.icon-info:hover {
-	color: rgb(219, 147, 147);
-}
 .link-no-style {
 	text-decoration: none !important;
 	background-color: transparent !important;
@@ -76,23 +54,24 @@ Estilos para la card de equipos de medicion
 }
 */
 .tools_container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	width: 100%;
-}
-.tools {
-	background: rgba(0, 0, 0, 0.029);
-	margin: 1rem;
-	width: 50%;
+	width: 70%;
+	-webkit-margin-start: 4rem;
+	-webkit-margin-end: 4rem;
+	margin-bottom: 1rem;
 }
 .tools_link {
 	background: bisque;
-	padding: 5%;
-	border-radius: 3rem;
-	margin: 1rem;
+	text-decoration: none !important;
+	background-color: transparent !important;
+	border-radius: inherit;
 }
-.tools_image {
-	width: 2rem;
-	height: 2rem;
+.card_title{
+	font-style: italic;
+	font-size: 14px;
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+}
+.card_text{
+	font-size: 14px;
+	text-align: start;
 }
