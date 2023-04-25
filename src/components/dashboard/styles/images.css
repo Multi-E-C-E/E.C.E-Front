@@ -1,47 +1,64 @@
-.dash-card-container {
-  display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-  background: rgba(0, 0, 0, 0.029);
-  border-end-end-radius: 3rem;
-  border-end-start-radius: 3rem;
-  
+.dash-home-container {
+	background-color: rgba(0, 0, 0, 0.029);
+	border-end-end-radius: 3rem;
+	border-end-start-radius: 3rem;
 }
 
-
+.dash-home-img-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.title_com {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: white;
+	font-size: 22px;
+	background-color: #5a0000;
+	border-end-end-radius: 1.5rem;
+	border-end-start-radius: 1.5rem;
+}
+.title_options {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: #5a0000;
+	font-size: 22px;
+	-webkit-margin-start: 10%;
+	-webkit-margin-end: 10%;
+	border-radius: 4rem;
+	
+}
 .img_container {
-  background-color: rgba(0, 255, 255, 0);
-  justify-content: center;
-  margin: 01rem;
+	background-color: rgba(0, 255, 255, 0);
+	justify-content: center;
+	margin: 0.1rem;
 }
 
 .img_item {
-  width: 12rem;
-  height: 12rem;
-  opacity: 0.85;
-  
-  clip-path: circle(50% at center);
-  filter: brightness(50%);
-  transition-property: clip-path filter;
-  transition-duration: 0.7s;
-  transition-timing-function: ease;
-  transition-delay: ease-in;
- 
+	width: 12rem;
+	height: 12rem;
+	opacity: 0.85;
+	clip-path: circle(50% at center);
+	filter: brightness(50%);
+	transition-property: clip-path filter border-radius;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	transition-delay: ease-in;
 }
 
 .img_container:hover .img_item {
-  clip-path: circle(47% at center);
-  filter: brightness(100%);
-  transform: scale(1.1);
-  opacity: 1;
+	border-radius: 50%;
+	clip-path: circle(47% at center);
+	filter: brightness(100%);
+	transform: scale(1.1);
+	border: 0.6rem solid #5a0000;
+	opacity: 1;
 }
 
-p{
-  text-align: center;
-  font-style: italic;
+p {
+	text-align: center;
+	font-style: italic;
 	font-family: 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 	color: rgb(0, 0, 0);
 }
-
-

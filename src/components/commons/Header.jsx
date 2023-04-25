@@ -22,7 +22,7 @@ export const Header = () => {
 					<Link to={'/'}>
 						<img
 							className='logo'
-							src='https://drive.google.com/uc?export=view&id=1gZCH2UgnWcrUfs3fB2cCCepilMAMTJix'
+							src='https://upqroo.edu.mx/wp-content/uploads/2022/03/NuevoLogoUPQROO-PNGOFICIAL-300x120.png'
 						/>
 					</Link>
 				</div>
