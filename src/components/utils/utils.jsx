@@ -24,30 +24,7 @@ export const tools = [
 		},
 		path: '/dashboard',
 	},
-	{
-		name: 'Practicas',
-		img_item: image2,
-		desciption: {
-			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
-		},
-		path: '/practice',
-	},
-	{
-		name: 'Render 3D',
-		img_item: image2,
-		desciption: {
-			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
-		},
-		path: '/dashboard',
-	},
-	{
-		name: 'Practicas',
-		img_item: image2,
-		desciption: {
-			text: 'Mejora tu aprendizaje poniendo en  practica tus concimientos',
-		},
-		path: '/practice',
-	},
+	
 	// ...
 ];
 
