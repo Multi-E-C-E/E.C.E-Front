@@ -11,6 +11,13 @@ import { Options } from './Options.jsx';
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
 	console.log(error.toString());
+	let load = false;
+
+	const loadStaticData = () => {
+		if (items.length > 0) {
+			load = true;
+		}
+	};
 
 	return (
 		<>
@@ -37,6 +44,7 @@ export const Dashboard = () => {
 				)}
 
 				{loanding && <div>Cargando ... </div>}
+				{loadStaticData()}
 				{items.map(item => (
 					<div className='img_container' key={item.id_item}>
 						<Link
@@ -55,11 +63,15 @@ export const Dashboard = () => {
 				))}
 			</div>
 			<hr />
-			<Container>
-				<Options />
-			</Container>
+			{load && (
+				<div>
+					<Container>
+						<Options />
+					</Container>
 
-			<Home />
+					<Home />
+				</div>
+			)}
 		</>
 	);
 };
