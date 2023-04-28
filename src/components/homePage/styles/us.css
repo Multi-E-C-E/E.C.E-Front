@@ -6,13 +6,12 @@
 	top: 0;
 	display: flex;
 	flex-wrap: wrap;
-	background-color: rgba(0, 0, 0, 1);
+	background-color: black;
 	clip-path: circle(0% at 100% 0);
 	transition-property: clip-path filter;
 	transition-duration: 0.7s;
 	transition-timing-function: ease;
 	transition-delay: ease-in;
-	
 }
 
 .main_container.active {
@@ -30,21 +29,75 @@
 	color: white;
 	background-color: #5a0000;
 }
+
+.icon_help_dark {
+	z-index: 101;
+	position: fixed;
+	top: 1%;
+	right: 5%;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+}
 .about_container {
 	display: flex;
 	justify-content: space-between;
 	border-radius: 2rem;
-	margin: 10rem;
+	margin: 5rem;
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 1rem;
-	line-height: 1.7;
-	
+	background-color: rgb(0, 0, 0);
+	position: relative;
+	line-height: 4.9;
 }
-.main_container.active .about_container {
+.main_container.active .about_container .about_us {
 	/* Animation */
+	z-index: 105;
+	animation-name: letf_container;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.main_container.active .about_container .about_page {
+	/* Animation */
+	z-index: 104;
 	animation-name: up_container;
 	animation-duration: 0.7s;
 }
+
+.about_us {
+	position: absolute;
+	font-size: 15px;
+
+	background-color: black;
+
+	color: white;
+
+	width: 62%;
+	height: 100%;
+}
+
+.about_page {
+	font-size: 15px;
+
+	box-sizing: border-box;
+	width: 100%;
+	color: black;
+	height: 100%;
+	background-color: white;
+	-webkit-margin-start: 38%;
+}
+
+.about_conten_us {
+	-webkit-margin-start: 10%;
+}
+
+.about_conten {
+	-webkit-margin-start: 52%;
+}
+
+/* fames */
 @keyframes up_container {
 	from {
 		transform: translateX(100%);
@@ -53,35 +106,14 @@
 		transform: translateX(0);
 	}
 }
-.about_us {
-	font-size: 24px;
-	margin: 0rem;
-	box-sizing: border-box;
-	width: 50%;
-	height: 100%;
-	border: solid #5b6dcd 10px;
-	padding: 5px;
-	background: tomato;
-	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 54%, 0% 0%);
-}
-.about_us li {
-	margin-bottom: 1rem;
-	background-color: antiquewhite;
-}
 
-.about_page {
-	font-size: 24px;
-	margin: 0rem;
-	box-sizing: border-box;
-	width: 50%;
-	height: 100%;
-	background-color: #5a0000;
-	clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-	
-}
+@keyframes letf_container {
+	0% {
+		transform: translateX(-100%);
+	}
 
-.about_conten{
-	-webkit-margin-start: 30% ;
+	100% {
+		transform: translateX(0);
+		clip-path: polygon(0 0, 100% 0, 61% 100%, 0% 100%);
+	}
 }
-
-/* test */
