@@ -2,7 +2,6 @@ import { handleClick } from '../commons/onHandleClick.jsx';
 import { Link } from 'react-router-dom';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Card, Container, Alert } from 'react-bootstrap';
-import { Home } from './../homePage/Home.jsx';
 import './styles/dashboard.css';
 import './styles/images.css';
 import { ErrMessague } from '../errorPage/errorMessage.jsx';
@@ -11,7 +10,7 @@ import { Options } from './Options.jsx';
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
 	console.log(error.toString());
-	let load = true;
+	let load = false;
 
 	const loadStaticData = () => {
 		if (items.length > 0) {
