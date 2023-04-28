@@ -42,15 +42,14 @@ export const Header = () => {
 						</a>
 					))}
 
-<Link to='/'>
-					{pathname !== '/' && (
-						<div>
-							<AiFillHome className='btn-flotante' />
-						</div>
-					)}
-				</Link>
+					<Link to='/'>
+						{pathname !== '/' && (
+							<div>
+								<AiFillHome className='btn-flotante' />
+							</div>
+						)}
+					</Link>
 				</div>
-				
 			</div>
 		</>
 	);

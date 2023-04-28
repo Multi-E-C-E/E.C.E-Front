@@ -11,7 +11,7 @@ import { Options } from './Options.jsx';
 export const Dashboard = () => {
 	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
 	console.log(error.toString());
-	let load = false;
+	let load = true;
 
 	const loadStaticData = () => {
 		if (items.length > 0) {
@@ -75,7 +75,7 @@ export const Dashboard = () => {
 						<Options />
 					</Container>
 
-					<Home />
+					
 				</div>
 			)}
 		</>

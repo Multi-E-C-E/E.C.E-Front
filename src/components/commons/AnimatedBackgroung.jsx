@@ -123,7 +123,7 @@ const MyParticles = () => {
 
 	return (
 		<>
-			<div style={{ position: 'relative' }} className='Background'>
+			<div className='Background'>
 				<Particles
 					id='tsparticles'
 					init={loadFull}
