@@ -1,7 +1,11 @@
 import './styles/us.css';
 import { BiHelpCircle, BiXCircle } from 'react-icons/bi';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 import { useState } from 'react';
-import { Paper } from '@mui/material';
+
+import { data } from '../utils/utils';
 export const UsInfo = () => {
 	const [isClipPathActive, setIsClipPathActive] = useState(false);
 	const handleClick = () => {
@@ -23,40 +27,46 @@ export const UsInfo = () => {
 				<div className='container about_container'>
 					<div className='about_us'>
 						<div className=' about_conten_us '>
-							<li className='list-group-item '>An item</li>
-							<p className='list-group-item text-justify'>
+							<li className='list-group-item us_text '>¿Quiénes somos?</li>
+							<p className='list-group-item us_text'>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. A.
 							</p>
 						</div>
 
-						<li className='list-group-item '>Contacto</li>
-						<p className='list-group-item text-justify'>
+						<li className='list-group-item t us_text'>Contacto</li>
+						<p className='list-group-item text-justify us_text'>
 							Lorem ipsum dolor, sit amet consectetur adipisicing elit. A.
 						</p>
 					</div>
 
 					<div className='about_page'>
 						<div className='about_conten'>
-							<div className='card border-0'>
-								<div className='card-body'>
-									<h5 className='card-title'>Sitio web</h5>
-									<p className='card-text list-group-item'>
-										Bienvenido a la asignatura "Principios de Electrónica". Aquí
-										encontrarás:
-										<li className='list-group-item '>
-											Información general de los componentes electrónicos de la
-											materia
-										</li>
-										<li className='list-group-item '>
-											Prácticas de laboratorio para su desarrollo
-										</li>
-										<li className='list-group-item '>
-											Cuadernillos de ejercicios y hojas de datos, referentes a
-											los componentes electrónicos.
-										</li>
-									</p>
-								</div>
-							</div>
+							{data.map((item, index) => (
+								<>
+									{' '}
+									<div className='cdcd_2'>
+										
+									<h4 className='us_text'>{item.welcome}</h4>
+									
+									<h4 className='us_text'>{item.title}</h4>
+								
+								
+									<h4 className='us_text'>{item.title2}</h4>
+										
+									</div>
+									<div className='cdcd'>
+										<Card className='card-container ' key={index}>
+											<ListGroup>
+												{item.text.map((textItem, textIndex) => (
+													<ListGroup.Item key={textIndex} className='border-0'>
+														<h5 className='us_text'>*{textItem}</h5>
+													</ListGroup.Item>
+												))}
+											</ListGroup>
+										</Card>{' '}
+									</div>
+								</>
+							))}
 						</div>
 					</div>
 				</div>
