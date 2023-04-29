@@ -1,7 +1,6 @@
-import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AiOutlineHome } from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/ai';
 import '../../css/float.css';
 import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from 'react-icons/bs';
 
@@ -18,21 +17,16 @@ export const Header = () => {
 	];
 	return (
 		<>
-			<header>
-				<h5 className='h5-hd'>Redes sociales</h5>
-			</header>
-			<Navbar className='nav-bar' variant='dark'>
-				<Link to={'/'}>
-					<img
-						className='logo'
-						src='https://drive.google.com/uc?export=view&id=1kGSAaS0SqQGyEj5F4EqGVhifCp8wg8W6'
-					/>
-				</Link>
-				<Link to='/'>
-					{pathname !== '/'  && (
-						<AiOutlineHome className='btn-flotante' />
-					)}
-				</Link>
+			<div className='nav-bar'>
+				<div className='logo_container'>
+					<Link to={'/'}>
+						<img
+							className='logo'
+							src='https://upqroo.edu.mx/wp-content/uploads/2022/03/NuevoLogoUPQROO-PNGOFICIAL-300x120.png'
+						/>
+					</Link>
+				</div>
+
 				<div className='icon-container'>
 					{socialIcons.map((socialIcon, index) => (
 						<a
@@ -47,9 +41,16 @@ export const Header = () => {
 							})}
 						</a>
 					))}
+
+					<Link to='/'>
+						{pathname !== '/' && (
+							<div>
+								<AiFillHome className='btn-flotante' />
+							</div>
+						)}
+					</Link>
 				</div>
-				
-			</Navbar>
+			</div>
 		</>
 	);
 };

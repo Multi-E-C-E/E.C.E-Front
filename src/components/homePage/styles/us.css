@@ -1,0 +1,183 @@
+.main_container {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: black;
+	clip-path: circle(0% at 100% 0);
+	transition-property: clip-path filter;
+	transition-duration: 0.7s;
+	transition-timing-function: ease;
+	transition-delay: ease-in;
+}
+
+.main_container.active {
+	clip-path: circle(100% at 50% 0);
+}
+
+.icon_help {
+	z-index: 101;
+	position: fixed;
+	top: 1%;
+	right: 5%;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	color: white;
+	background-color: #5a0000;
+}
+
+.icon_help_dark {
+	z-index: 101;
+	position: fixed;
+	top: 1%;
+	right: 5%;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	color: white;
+	background-color: black;
+}
+.about_container {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 2rem;
+	margin: 5rem;
+	font-family: 'Times New Roman', Times, serif;
+	background-color: rgb(0, 0, 0);
+	position: relative;
+	line-height: 2.9;
+}
+.main_container.active .about_container .about_us {
+	/* Animation */
+	z-index: 105;
+	animation-name: left_container_clp ;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.main_container.active .about_container .about_page {
+	/* Animation */
+	z-index: 104;
+	animation-name: up_container;
+	animation-duration: 0.7s;
+}
+
+.about_us {
+	position: absolute;
+	font-size: 15px;
+
+	background-color: black;
+
+	color: white;
+	width: 62%;
+	height: 100%;
+	background-image: url(./../../../assets/react.svg);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.about_page {
+	
+	font-size: 15px;
+	box-sizing: border-box;
+	width: 100%;
+	color: black;
+	height: 100%;
+display: none;
+	background-color: rgb(237, 237, 237);
+	-webkit-margin-start: 38%;
+}
+.main_container.active .about_page{
+	display: block;
+	background-image: url(./../../../assets/transistor.svg);
+	background-repeat: repeat;
+	background-position: right bottom;
+	background-size:10rem;
+	
+
+}
+
+.about_conten_us {
+	-webkit-margin-start: 10%;
+}
+
+.us_text{
+	font-size: 1.2rem;
+	text-align: start;
+	font-family:'Times New Roman', Times, serif;
+	font-style: italic;
+	
+	
+}
+
+.main_container.active .us_text{
+	animation-name: up_container;
+	animation-duration: .8s;
+	
+}
+.about_conten  {
+	-webkit-margin-start: 39%;
+
+}
+
+.about_conten {
+	margin-top: 2rem;
+	margin-right: 1rem;
+	display: flex;
+	
+}
+.about_conten .cdcd{
+	margin-top: 8rem;
+	
+}
+
+.about_conten .cdcd_2{
+	position: absolute;
+	background-color: white;
+	border-radius: .4rem;
+	
+}
+
+.main_container.active .about_conten {
+	animation-name: left_container;
+	animation-duration: 1s;
+}
+
+	
+
+/* fames */
+@keyframes up_container {
+	from {
+		transform: translateX(100%);
+		
+	}
+	to {
+		transform: translateX(0);
+		
+	}
+}
+
+@keyframes left_container {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+		
+	}
+}
+@keyframes left_container_clp {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+		clip-path: polygon(0 0, 100% 0, 61% 100%, 0% 100%);
+	}
+}

@@ -1,18 +1,18 @@
-.carousel-contaier {
-	border-bottom-left-radius: 50px;
-	border-bottom-right-radius: 50px;
-	width: 100%;
-}
-.img-carousel {
-	z-index: 0;
+.home-container {
 	display: block;
-	height: 450px;
-	width: 75%;
-	margin-left: 10%;
+	background-color: rgba(219, 147, 147, 0.122);
+	border-radius: 80px;
+	margin-bottom: 4rem;
+	margin-top: 4rem;
+	padding: 2rem;
 }
-.card-container{
-	margin-top: 1rem;
-	background-color: antiquewhite;
+.contaner_carousl{
+	margin-left: 20%;
+	margin-right:20% ;
+}
+.list_image{
+	width: 100%;
+	height: 30rem  !important;;
 }
 h4 {
 	font-family: 'Times New Roman', Times, serif;
@@ -23,14 +23,6 @@ h5 {
 	font-style: italic;
 }
 
-.home-container {
-	display: flex;
-	background-color: rgba(219, 147, 147, 0.122);
-	border-bottom-left-radius: 80px;
-	border-bottom-right-radius: 80px;
-	margin-bottom: 4rem;
-	margin-top: 4rem;
-}
 .home-component-info {
 	background-color: rgb(241, 38, 38);
 	width: 50%;

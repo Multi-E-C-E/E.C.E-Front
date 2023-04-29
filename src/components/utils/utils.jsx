@@ -45,13 +45,11 @@ export const components = [
 ];
 
 export const data = [
+	
 	{
-		title: 'Bienvenido a la asignatura "Principios de Electrónica"',
-		text: [],
-		imgSrc: '',
-	},
-	{
-		title: 'Aquí encontrarás:',
+		welcome: 'Bienvenido a la asignatura',
+		title : '"Principios de Electrónica"',
+		title2: 'Aquí encontrarás:',
 		text: [
 			'Información general de los componentes electrónicos de la materia',
 			'Prácticas de laboratorio para su desarrollo',

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const useFecth = END => {
-	const [items, setItems] = useState([]);
+	const [data, setData] = useState([]);
 	const [loanding, setLoanding] = useState(true);
 	const [error, setError] = useState(false);
 	const [detaiError, setErrorDetail] = useState([]);
@@ -11,7 +11,7 @@ export const useFecth = END => {
 			method: 'GET',
 		})
 			.then(response => response.json())
-			.then(data => setItems(data))
+			.then(data => setData(data))
 			.catch(error => {
 				console.log(error);
 				setError(true);
@@ -20,7 +20,7 @@ export const useFecth = END => {
 			.finally(() => setLoanding(false));
 	}, []);
 
-	return { items, loanding, error, detaiError, setItems };
+	return { data, loanding, error, detaiError, setData };
 };
 
 export const useFecthAwait = async END => {
