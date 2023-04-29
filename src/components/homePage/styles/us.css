@@ -181,3 +181,22 @@ display: none;
 		clip-path: polygon(0 0, 100% 0, 61% 100%, 0% 100%);
 	}
 }
+
+/* responsive */
+
+@media screen and (max-width: 992px) {
+	.about_us {
+		background-color: #5a0000;
+		display: none;
+	}
+
+	.about_page {
+		-webkit-margin-start: 0%;
+	}
+	.about_conten {
+		margin: 4rem;
+	}
+	.main_container {
+		height: 140%;
+	}
+}
