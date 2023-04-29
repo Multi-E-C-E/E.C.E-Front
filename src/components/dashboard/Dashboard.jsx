@@ -8,12 +8,12 @@ import { ErrMessague } from '../errorPage/errorMessage.jsx';
 import { Options } from './Options.jsx';
 
 export const Dashboard = () => {
-	const { items, loanding, error, detaiError } = useFecth('item/all?type=1');
+	const { data, loanding, error, detaiError } = useFecth('item/all?type=1');
 	console.log(error.toString());
 	let load = false;
 
 	const loadStaticData = () => {
-		if (items.length > 0) {
+		if (data.length > 0) {
 			load = true;
 		}
 	};
@@ -47,7 +47,7 @@ export const Dashboard = () => {
 
 					{loanding && <div>Cargando ... </div>}
 					{loadStaticData()}
-					{items.map(item => (
+					{data.map(item => (
 						<div className='img_container' key={item.id_item}>
 							<Link
 								className='link-no-style card-title'

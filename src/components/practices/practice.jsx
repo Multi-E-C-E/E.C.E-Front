@@ -4,7 +4,7 @@ import { Container, ListGroup } from 'react-bootstrap';
 import './../../css/Practices.css';
 
 export const Practice = () => {
-	const { items, loanding, error, detaiError } = useFecth('item/practices');
+	const { data, loanding, error, detaiError } = useFecth('item/practices');
 	const [selectedPdfUrl, setSelectedPdfUrl] = useState(null);
 
 	const handlePdfSelection = pdfUrl => {
@@ -13,7 +13,7 @@ export const Practice = () => {
 
 	useEffect(() => {
 		
-	}, [items]);
+	}, [data]);
 
 	return (
 		<>
@@ -24,7 +24,7 @@ export const Practice = () => {
 				</div>
 				<div className='d-flex'>
 					<ListGroup>
-						{items.slice(0, 3).map(items => (
+						{data.slice(0, 3).map(items => (
 							<ListGroup.Item
 								key={items.id_practice}
 								style={{ wordWrap: 'break-word' }}

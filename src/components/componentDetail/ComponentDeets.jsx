@@ -8,7 +8,7 @@ import { LateralModal3D } from './ComponentModals3D.jsx';
 import '../../css/details.css';
 const ComponentDetail = () => {
 	const { id } = useParams();
-	const { items, detaiError, error, loanding } = useFecth('item/detail/' + id);
+	const { data, detaiError, error, loanding } = useFecth('item/detail/' + id);
 
 	// inicializar estados
 	const [image, setImage] = useState({});
@@ -16,14 +16,14 @@ const ComponentDetail = () => {
 
 	// asignar los assets
 	useEffect(() => {
-		if (items.Assets) {
+		if (data.Assets) {
 			setImage(findAsset(1));
 			setAsset3D(findAsset(3));
 		}
-	}, [items]);
+	}, [data]);
 
 	const findAsset = type => {
-		const asset = items.Assets.find(
+		const asset = data.Assets.find(
 			asset => asset.TypeAsset.id_typeAsset === type
 		);
 		return asset ?? {};
@@ -34,17 +34,17 @@ const ComponentDetail = () => {
 			<Container className='text-center'>
 				{error && <div>{detaiError.toString()}</div>}
 				{loanding && <div>Cargando ... </div>}
-				{typeof items !== 'undefined' && (
+				{typeof data !== 'undefined' && (
 					<>
 						<div className='row'>
-							<h1>{items.name}</h1>
+							<h1>{data.name}</h1>
 						</div>
 						<div className='card-container'>
 							<div className='col-2'>
 								<LateralModal
 									data={{
 										haveImg: true,
-										...items.Symbology,
+										...data.Symbology,
 										title: <h5> Symbología </h5>,
 									}}
 								/>
@@ -52,14 +52,14 @@ const ComponentDetail = () => {
 									data={{
 										haveImg: false,
 										title: <h5> Aplicaciones </h5>,
-										description: items.aplication,
+										description: data.aplication,
 									}}
 								/>
 								<LateralModal
 									data={{
 										haveImg: false,
 										title: <h5> ¿Qué es? </h5>,
-										description: items.description,
+										description: data.description,
 									}}
 								/>
 								{asset3D.url && (
@@ -69,7 +69,7 @@ const ComponentDetail = () => {
 								)}
 							</div>
 							<img src={image.url} className='img-detail' />
-							<Paper sx={{ p: 2 }}>{items.description}</Paper>
+							<Paper sx={{ p: 2 }}>{data.description}</Paper>
 						</div>
 					</>
 				)}

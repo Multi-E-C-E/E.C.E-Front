@@ -8,7 +8,7 @@ import './../../css/mepd.css';
 import { ErrMessague } from '../errorPage/errorMessage';
 
 const MSE = () => {
-	const { items, detaiError, error, loanding, setItems } =
+	const { data, detaiError, error, loanding, setData } =
 		useFecth('item/detail/3');
 
 	const [, setImage] = useState({});
@@ -17,21 +17,21 @@ const MSE = () => {
 	const [assets, setAssets] = useState([]);
 
 	useEffect(() => {
-		if (items.Assets) {
+		if (data.Assets) {
 			setImage(findAsset(1));
 			setVideo(findAsset(2));
 			setAsset3D(findAsset(3));
 		}
-	}, [items]);
+	}, [data]);
 
 	const functionParent = async datos => {
 		const { json } = await useFecthAwait(`item/detail/${datos}`);
-		setItems(json);
+		setData(json);
 		setAssets([]);
 	};
 
 	const findAsset = type => {
-		const asset = items.Assets.find(
+		const asset = data.Assets.find(
 			asset => asset.TypeAsset.id_typeAsset === type
 		);
 		if (asset) assets.push(asset);
@@ -67,10 +67,10 @@ const MSE = () => {
 				</h3>
 				<ToolsList enviar={functionParent} />
 
-				<h1>{items.name}</h1>
+					<h1>{data.name}</h1>
 				<div className='tools-items'>
 					{assets.length > 0 && <TabAssets assets={assets} />}
-					<p>{items.description}</p>
+					<p>{data.description}</p>
 				</div>
 				<hr />
 			</Container>

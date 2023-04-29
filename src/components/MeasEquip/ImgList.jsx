@@ -3,7 +3,7 @@ import { useFecth } from '../../network/useFetch';
 import PropTypes from 'prop-types';
 
 const ToolsList = props => {
-	const { items, loanding } = useFecth('item/all?type=2');
+	const { data, loanding } = useFecth('item/all?type=2');
 
 	const enviarData = key => {
 		props.enviar(key);
@@ -18,7 +18,7 @@ const ToolsList = props => {
 					className='title-tool-tab'
 					onSelect={enviarData}
 				>
-					{items.map(image => (
+					{data.map(image => (
 						<Tab
 							key={image.id_item}
 							eventKey={image.id_item}
