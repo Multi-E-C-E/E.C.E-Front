@@ -1,0 +1,135 @@
+.g-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 0;
+}
+.symbology_container {
+	animation-name: down_up_container_dts;
+	animation-duration: 0.5s;
+}
+.btn_modal_container {
+	display: flex;
+	background-color: bisque;
+	width: 50vh;
+	height: 40vh;
+	justify-content: center;
+	text-align: center;
+}
+.modal_title {
+	font-size: 2rem;
+}
+.preview_modal_img {
+	height: 17vh;
+	margin-top: 1rem;
+	background-color: white;
+	border-radius: 1rem;
+	filter: brightness(50%);
+	transition-property: filter;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	transition-delay: ease-in;
+}
+.preview_modal_img:hover {
+	filter: brightness(100%);
+}
+
+ 
+.blinking_message {
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: black;
+	padding: 1rem;
+	animation: blink 0.9s ease-in-out infinite;
+}
+
+.symbology {
+	width: 100%;
+}
+.render_3d_container {
+	width: 30%;
+}
+.render3D {
+	background-color: bisque;
+	width: 100%;
+	height: 40vh;
+	padding: 0.5rem;
+	border-radius: 2rem;
+}
+
+.desciption_container {
+	width: 30%;
+	animation-name: down_up_container_dts;
+	animation-duration: 0.5s;
+}
+.desciption {
+	line-height: 3rem;
+	background-color: aliceblue;
+	text-align: justify;
+}
+
+.img-dets {
+	animation-name: down_up_container_dts;
+	animation-duration: 0.3s;
+	clip-path: circle(100%);
+}
+.card-dets:hover {
+	background-color: rgba(219, 147, 147, 0.445);
+}
+
+.img-detail {
+	height: 12rem;
+	width: 100%;
+}
+.information_container{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	background-color: bisque;
+	border-radius: 1rem;
+	font-family: 'Times New Roman', Times, serif;
+	font-style: italic;
+}
+.information{
+	padding: 1rem;
+	width: 100%;
+}
+
+.information .nav-link:not(.active) {
+	color: black;
+	
+}
+
+.information .nav-link:not(.active):hover {
+	transition: all 0.3s ease;
+	opacity: 1;
+	background-color: white;
+	border-radius: 5rem;
+}
+
+.information .nav-link:not(.active) {
+	opacity: .4;
+	background-color: white;
+}
+
+
+
+/* fames */
+@keyframes down_up_container_dts {
+	from {
+		transform: translateY(100%);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes circle_container_dts {
+	from {
+		clip-path: circle(1%);
+	}
+	to {
+		clip-path: circle(100%);
+	}
+}
