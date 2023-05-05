@@ -3,22 +3,19 @@ import { useState, useEffect } from 'react';
 import { Tabs, Tab, Container } from 'react-bootstrap';
 import { useFecth } from '../../network/useFetch.jsx';
 import { LateralModal } from './ComponentModals.jsx';
-
 import './styles/details.css';
-import M3D from '../commons/M3D.jsx';
-import { Paper } from '@mui/material';
+import { NotFound } from '../errorPage/PageNotFound.jsx';
 const ComponentDetail = () => {
 	const { id } = useParams();
 	const { data, detaiError, error, loanding } = useFecth('item/detail/' + id);
 
 	// inicializar estados
-	const [image, setImage] = useState({});
+
 	const [asset3D, setAsset3D] = useState({});
 
 	// asignar los assets
 	useEffect(() => {
 		if (data.Assets) {
-			setImage(findAsset(1));
 			setAsset3D(findAsset(3));
 		}
 	}, [data]);
@@ -36,11 +33,11 @@ const ComponentDetail = () => {
 			<div>
 				<h1>{data.name}</h1>
 			</div>
+
 			<Container>
 				<div className='g-container'>
-					{error && <div>{detaiError.toString()}</div>}
-					{loanding && <div>Cargando ... </div>}
-					{typeof data !== 'undefined' && (
+					{typeof data.name === 'undefined' &&(<NotFound/>)}
+					{typeof data.name !== 'undefined' && (
 						<>
 							<div className='symbology_container'>
 								<div className='symbology'>
@@ -64,21 +61,24 @@ const ComponentDetail = () => {
 							</div>
 						</>
 					)}
-					<div className='information_container'>
-						<div className='information '>
-							<Tabs activeKey={key} onSelect={k => setKey(k)}>
-								<Tab eventKey='whatIs' title='Que es'>
-									<div className='information'>{data.whatIs}</div>
-								</Tab>
-								<Tab eventKey='description' title='Descripcion'>
-									<div className='information'>{data.description}</div>
-								</Tab>
-								<Tab eventKey='aplication' title='Applicacion'>
-									<div className='information'>{data.aplication}</div>
-								</Tab>
-							</Tabs>
+
+					{typeof data.name !== 'undefined' && (
+						<div className='information_container'>
+							<div className='information '>
+								<Tabs activeKey={key} onSelect={k => setKey(k)}>
+									<Tab eventKey='whatIs' title='¿Qué es? '>
+										<div className='information'>{data.whatIs}</div>
+									</Tab>
+									<Tab eventKey='description' title='Descripción '>
+										<div className='information'>{data.description}</div>
+									</Tab>
+									<Tab eventKey='aplication' title='Aplicación '>
+										<div className='information'>{data.aplication}</div>
+									</Tab>
+								</Tabs>
+							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</Container>
 		</>
