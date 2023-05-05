@@ -1,7 +1,3 @@
-
-.aaaaa{
-	background: black;
-}
 .g-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -52,8 +48,6 @@
 }
 .render_3d_container {
 	width: 30%;
-	
-	
 }
 .render3D {
 	background-color: bisque;
@@ -62,8 +56,6 @@
 	padding: 0.5rem;
 	border-radius: 2rem;
 }
-
-
 
 .img-dets {
 	animation-name: down_up_container_dts;
@@ -78,7 +70,6 @@
 	height: 12rem;
 	width: 100%;
 }
-
 
 .information_container {
 	display: flex;
@@ -96,7 +87,6 @@
 	border-radius: 1rem;
 	width: 100%;
 }
-
 
 .information .nav-link:not(.active) {
 	color: black;
@@ -131,5 +121,43 @@
 	}
 	to {
 		clip-path: circle(100%);
+	}
+}
+
+/* responsive */
+
+@media screen and (max-width: 1200px) {
+	.symbology_container {
+		width: 40%;
+	}
+	.render_3d_container {
+		width: 40%;
+	}
+	.information_container {
+		width: 100%;
+	}
+}
+
+/* dispositivos de pantalla mediana */
+
+@media screen and (max-width: 992px) {
+	.btn_modal_container {
+		height: 10%;
+	}
+	.symbology_container {
+		width: 60%;
+	}
+	.preview_modal_img {
+		display: none;
+	}
+	.render_3d_container {
+		width: 70%;
+	}
+}
+/* dispositivos de pantalla pequeña */
+
+@media screen and (max-width: 768px) {
+	.render_3d_container {
+		width: 100%;
 	}
 }
