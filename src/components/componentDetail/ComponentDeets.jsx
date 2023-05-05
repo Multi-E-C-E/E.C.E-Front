@@ -64,22 +64,20 @@ const ComponentDetail = () => {
 							</div>
 						</>
 					)}
-				</div>
-			</Container>
-			<Container>
-				<div className='information_container'>
-					<div className='information '>
-						<Tabs  activeKey={key} onSelect={k => setKey(k)}>
-							<Tab  eventKey='whatIs' title='Que es'>
-								<div className='information'>{data.whatIs}</div>
-							</Tab>
-							<Tab eventKey='description' title='Descripcion'>
-								<div className='information'>{data.description}</div>
-							</Tab>
-							<Tab eventKey='aplication' title='Applicacion'>
-								<div className='information'>{data.aplication}</div>
-							</Tab>
-						</Tabs>
+					<div className='information_container'>
+						<div className='information '>
+							<Tabs activeKey={key} onSelect={k => setKey(k)}>
+								<Tab eventKey='whatIs' title='Que es'>
+									<div className='information'>{data.whatIs}</div>
+								</Tab>
+								<Tab eventKey='description' title='Descripcion'>
+									<div className='information'>{data.description}</div>
+								</Tab>
+								<Tab eventKey='aplication' title='Applicacion'>
+									<div className='information'>{data.aplication}</div>
+								</Tab>
+							</Tabs>
+						</div>
 					</div>
 				</div>
 			</Container>
