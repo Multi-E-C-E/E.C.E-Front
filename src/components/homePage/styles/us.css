@@ -54,7 +54,7 @@
 .main_container.active .about_container .about_us {
 	/* Animation */
 	z-index: 105;
-	animation-name: left_container_clp ;
+	animation-name: left_container_clp;
 	animation-duration: 0.6s;
 	animation-fill-mode: forwards;
 }
@@ -81,65 +81,55 @@
 }
 
 .about_page {
-	
 	font-size: 15px;
 	box-sizing: border-box;
 	width: 100%;
 	color: black;
 	height: 100%;
-display: none;
+	display: none;
 	background-color: rgb(237, 237, 237);
 	-webkit-margin-start: 38%;
 }
-.main_container.active .about_page{
+.main_container.active .about_page {
 	display: block;
 	background-image: url(./../../../assets/transistor.svg);
 	background-repeat: repeat;
 	background-position: right bottom;
-	background-size:10rem;
-	
-
+	background-size: 10rem;
 }
 
 .about_conten_us {
 	-webkit-margin-start: 10%;
 }
 
-.us_text{
+.us_text {
 	font-size: 1.2rem;
 	text-align: start;
-	font-family:'Times New Roman', Times, serif;
+	font-family: 'Times New Roman', Times, serif;
 	font-style: italic;
-	
-	
 }
 
-.main_container.active .us_text{
+.main_container.active .us_text {
 	animation-name: up_container;
-	animation-duration: .8s;
-	
+	animation-duration: 0.8s;
 }
-.about_conten  {
+.about_conten {
 	-webkit-margin-start: 39%;
-
 }
 
 .about_conten {
 	margin-top: 2rem;
 	margin-right: 1rem;
 	display: flex;
-	
 }
-.about_conten .cdcd{
+.about_conten .cdcd {
 	margin-top: 8rem;
-	
 }
 
-.about_conten .cdcd_2{
+.about_conten .cdcd_2 {
 	position: absolute;
 	background-color: white;
-	border-radius: .4rem;
-	
+	border-radius: 0.4rem;
 }
 
 .main_container.active .about_conten {
@@ -147,17 +137,13 @@ display: none;
 	animation-duration: 1s;
 }
 
-	
-
 /* fames */
 @keyframes up_container {
 	from {
 		transform: translateX(100%);
-		
 	}
 	to {
 		transform: translateX(0);
-		
 	}
 }
 
@@ -168,7 +154,6 @@ display: none;
 
 	100% {
 		transform: translateX(0);
-		
 	}
 }
 @keyframes left_container_clp {

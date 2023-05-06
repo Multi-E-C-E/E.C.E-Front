@@ -1,6 +1,6 @@
 import { Container, Modal, Card } from 'react-bootstrap';
 import { useState } from 'react';
-import{GoEyeClosed} from'react-icons/go'
+import { GoEyeClosed } from 'react-icons/go';
 import PropTypes from 'prop-types';
 
 export const LateralModal = ({ data }) => {
@@ -13,11 +13,13 @@ export const LateralModal = ({ data }) => {
 		<Container>
 			<div className='row'>
 				<div className='col-12'>
-					<Card  onClick={handleShow}>
-						<Card.Body className='card-dets'>
-							<Card.Title >
+					<Card onClick={handleShow}>
+						<Card.Body className='btn_modal_container'>
+							<Card.Title>
 								{' '}
 								{data.title}{' '}
+								<img className='preview_modal_img' src={data.image_url} />
+								<h5 className='blinking_message'>Clic aquí para más información</h5>
 							</Card.Title>
 						</Card.Body>
 					</Card>
@@ -35,16 +37,13 @@ export const LateralModal = ({ data }) => {
 								variant='top'
 								className='img-card'
 								src={data.image_url}
-								
 							/>
 						</Card>
 					)}
 					{data && data.description}
 				</Modal.Body>
 				<Modal.Footer>
-					<GoEyeClosed  onClick={handleClose}>
-						
-					</GoEyeClosed>
+					<GoEyeClosed onClick={handleClose}></GoEyeClosed>
 				</Modal.Footer>
 			</Modal>
 		</Container>
