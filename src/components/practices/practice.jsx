@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFecth } from '../../network/useFetch.jsx';
 import { Container, ListGroup } from 'react-bootstrap';
-import './../../css/Practices.css';
+import './styles/practices.css';
 
 export const Practice = () => {
 	const { data, loanding, error, detaiError } = useFecth('item/practices');
@@ -11,34 +11,31 @@ export const Practice = () => {
 		setSelectedPdfUrl(pdfUrl + '#zoom=100');
 	};
 
-	useEffect(() => {
-		
-	}, [data]);
+	useEffect(() => {}, [data]);
 
 	return (
 		<>
-			<Container>
-				<div className='text-center'>
-					<h1>Practicas</h1>
-					<h2>Selecciona una parctica para ver</h2>
-				</div>
-				<div className='d-flex'>
-					<ListGroup>
+			<h1>Practicas</h1>
+			<div className='section_container'>
+				<div className='list_practice_container'>
+					<div className='list_practice'>
 						{data.slice(0, 3).map(items => (
-							<ListGroup.Item
+							<div
+								className='btn_onSelectedPractice'
 								key={items.id_practice}
 								style={{ wordWrap: 'break-word' }}
 								onClick={() => handlePdfSelection(items.file_url)}
 							>
-								Practica {items.id_practice}
-							</ListGroup.Item>
+								<h1>Practica {items.id_practice}</h1>
+							</div>
 						))}
-					</ListGroup>
-					<div className='embed.pdf' style={{ width: '80%' }}>
-						<iframe src={selectedPdfUrl} className='view-pdf'></iframe>
 					</div>
 				</div>
-			</Container>
+
+				<div className='view_pdf_container'>
+					<iframe src={selectedPdfUrl} className='view_pdf'></iframe>
+				</div>
+			</div>
 		</>
 	);
 };
