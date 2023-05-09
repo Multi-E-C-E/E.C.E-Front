@@ -4,7 +4,7 @@ import { Alert, Card, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 import TabAssets from './tabAssest';
 import ToolsList from './ImgList';
-import './../../css/mepd.css';
+import './styles/mepd.css';
 import { ErrMessague } from '../errorPage/errorMessage';
 
 const MSE = () => {
